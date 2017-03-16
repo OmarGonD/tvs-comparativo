@@ -1,0 +1,11 @@
+structure(list(ecommerce = structure(c(3L, 3L, 3L, 3L, 3L, 1L, 
+1L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 2L, 2L), .Label = c("linio", 
+"ripley", "falabella"), class = c("ordered", "factor")), rangos = structure(c(2L, 
+3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L, 6L
+), .Label = c("< S/.500", "S/.500 - S/.1500", "S/.1500 - S/.2500", 
+"S/.2500 - S/.3500", "S/.3500 - S/.4500", "> S/.4,500"), class = c("ordered", 
+"factor")), cantidad = c(6L, 16L, 9L, 6L, 13L, 6L, 114L, 87L, 
+44L, 33L, 39L, 1L, 17L, 21L, 8L, 8L, 24L)), row.names = c(NA, 
+-17L), vars = list(ecommerce), drop = TRUE, .Names = c("ecommerce", 
+"rangos", "cantidad"), class = c("grouped_df", "tbl_df", "tbl", 
+"data.frame"))

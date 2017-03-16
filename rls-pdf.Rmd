@@ -1,0 +1,216 @@
+---
+title: "Diferencia en los precios de los televisores en los E-Commerce peruanos"
+subtitle: "Una investigación sobre los E-Commerce del Perú"
+author: "Omar André Gonzáles Díaz"
+date: "05 de marzo de 2016"
+output: pdf_document
+---
+
+#Introducción
+
+
+# Introduction
+
+Con esta investigación quise identificar definir las diferentes estrategias que tienen los principales e-commerce del Perú en base a 2 factores: 1) oferta de productos, 2) precio.
+
+Durante la investigación también fueron resaltantes las diferentes estructuras web que utilizó cada empresa: Linio fue la más diferentes, con un scroll infinito que nunca termina de mostrar productos (esto es una mala estrategía que explicaremos más adelante).
+
+
+Los datos sobre los productos (marca, producto, precio y descuento) los obtuvimos revisando el código fuente de cada una de los ecommerce. Por motivos de privacidad no se pondrán los nombres de cada uno de los ecommerce que se visitaron para esta investigación. Sino que se utilizarán seudónimos.
+
+
+Otro punto importante que quiere resaltar esta investigación es la diferencia de precios entre un Televisor comprado en Tienda Física y otro comprado por el Ecommerce online.
+
+
+&nbsp;
+
+### TVS en los principales E-Commerece del Perú
+
+![Total TVs](D:\\RCoursera\\r-s-l\\graficos\\tvs-cantidad.jpg)
+
+
+
+![S Porcentajes](D:\\RCoursera\\r-s-l\\graficos\\s.porcentajes.png)
+
+Es interesante notar la distribución de los televisores más costosos. Solo encontramos las siguientes marcas: LG, Samsung y Sony.
+
+Mientras que en los rangos de precios bajo hay más variedad, aunque algunas de las marcas no son tan conocidas(como: )
+
+\newpage
+
+
+#Ripley
+
+
+En el caso de Ripley, 
+
+![Total TVs](D:\\RCoursera\\Ripley\\r.porcentajes.png)
+
+
+
+![S Porcentajes](D:\\RCoursera\\Ripley\\r.rangos.png)
+
+
+
+\newpage
+
+
+#Linio
+
+
+
+En el caso de Linio, 
+
+![Total TVs](D:\\RCoursera\\Linio\\l.dif.porcentajes.png)
+
+&nbsp;
+
+![S Porcentajes](D:\\RCoursera\\Linio\\l.rangos.png)
+
+
+
+\newpage
+
+
+
+
+##Métricas
+
+Las métricas son las mediciones individuales de la actividad del usuario en tu propiedad, como las sesiones y las páginas vistas. 
+
+Ejemplos: ga:usuarios, ga: sesiones
+
+&nbsp;
+
+
+
+![GA - Dashboard principal](D:\\Starcom\\metricas-tipos.jpg)
+
+\newpage
+
+##Dimensiones
+
+Las dimensiones desglosan las métricas en algunos criterios comunes, como el país o el navegador. Al crear una consulta, se especifican las dimensiones y las métricas que se desean en los datos del informe. 
+
+Ejemplos: ga:campaign, ga:source, ga:medium
+
+&nbsp;
+
+
+
+
+
+![GA - Dashboard principal](D:\\Starcom\\dimension-tipos.jpg)
+
+\newpage
+
+
+#Métricas más importantes
+
+
+##Visitantes (Usuarios) 
+
+Está metríca llamada "visitantes" o "usuarios" mide el número de visitantes únicos que tiene su sitio durante cierto periodo de tiempo. Esta métrica es más comúnmente usada para entender el tamaño total de su audiencia.
+
+Puede segmentar esta métrica en _nuevos usuarios_ y  _usuarios recurrentes_.
+
+
+
+##Visitas (Sesiones)
+
+Las visitas, también conocidas como sesiones, se definen como un periodo consecutivo de actividad por un mismo usuario en nuestro sitio. Por defecto, en Google Analytics (GA) una sesión dura hasta que el usurio deja de interactuar con el sitio por 30 minutos. A esto se le conoce como: "duración de la sesión (session timeout length, en inglés)". 
+
+
+
+
+##Páginas vistas y eventos
+
+
+Con cada visita, los usuarios interactuan con su sitio de una u otra manera. Cada vez que una página (sección) carga en el navegador del usuarios, Google Analytics registra una página vista.
+
+Google Analytics puede también trackear otras actividades, por ejemplo, cuántas veces se vio un video o se descargo un archivo desde nuestro sitio. A este tipo de actividades se les conoce como: "eventos" y requieren de una implementación personalizada.
+
+
+Son estas interacciones: "sesiones" y "eventos" que mantienen la visita (sesión) de un usuario como "activa" para Google Analytics. Recuerde que una vez que un visitantes deja de interactuar con las secciones de su sitio, o no genera un evento por más de 30 minutos, su sesión expirará.
+
+
+#Métricas basadas en el tiempo:
+
+
+Es importante recordar que las métricas en GA se basan en el envío de actividad por parte del usuario (páginas vistas o eventos) para se calculados correctamente. GA hace seguimiento de cuándo ocurre cada una de estas acciones para calcular las métricas relacionadas con la duración de una visita(sesión).
+
+##Duración de la visita:
+
+Para calcular la métrica "duración de la visita" Google Analytics calcula la diferencia entre el tiempo de la primera interacción del usuario así como de la última.
+
+Recuerde, una interacción puede ser ver una página (sección del sitio), o si tiene un implementación más personalizada, un evento.
+
+##Tiempo en la página:
+
+Para calcular la métrica "tiempo en la página" Google Analytics toma el tiempo cuando el usuario llegó a una sección específica del sitio (conocida como "página de destino"), y resta este valor del tiempo en el que el usuario visita otra sección. 
+
+_Tiempo de llegada a la sección A - Tiempo de llegada a la sección B = Tiempo en la página A_
+
+
+##Porcentaje de rebote
+
+
+Finalmente, una métrica importante que nos queda por entender es "el porcentaje de rebote". 
+
+*Porcentaje de rebote* es el porcentaje de visitas (sesiones) con solo una interacción por parte del usuario.
+
+Tradicionamente, los rebotes son contados para los usuarios que llegan a nuestro sitio e inmediatamente lo abandonan (solo generan una interacción: una página vista).
+
+No importa cuánto tiempo pasen en la página. Si llegan a la página y abandonan inmediatamente, sin ver otro contenido, se considera como rebote.
+
+Como los rebotes solo consisten de una interacción, Google Analytics no tiene una segunda interacción para calcular, por ejemplo, la duración de la visita(sesión) en el sitio. Estas visitas, y la página vista incluida en la visita, son asignadas a un *duración de la visita* y *tiempo en la página* de cero segundos.
+
+&nbsp;
+**¿Por qué podría tener un porcentaje de rebote alto?**
+&nbsp;
+
+Primero, podría ser un indicador de que no se están colocando los incentivos indicados en la página de aterrizaje (landing page, o primera interacción de los usuarios con el sitio). 
+
+O puede ser que la experiencia del usuario no sea la adecuada. Por ejemplo, una página que no tiene una versión para dispositivos móviles va a generar que los usuarios la abandonen inmediatamente.
+
+
+Por otro lado, si lo que espera es que el usuario solo vea una página de su sitio, como en un blog o una landing informativa, un porcentaje de rebote alto es un indicador normal.
+
+
+Esta métrica es de especial utilidad cuando se trata de medir la efectividad de las campañas de marketing ejecutadas.
+
+
+Recuerde que las métricas de *tiempo* y *porcentaje de rebote* dependen de mantener un seguimiento de la actividad de los usuarios a través de una sesión.
+
+Esto puede ser dificil para sitios que utilizan *AJAX* o *Flash* para mostrar contenido, puesto que no se generan páginas vistas al mostrar contenido con estas tecnologías. 
+
+
+Una solución a esto es considerar la implementación de código para generar *eventos*. De esta manera podemos generar data más precisa sobre la activdad de los visitantes en el sitio.
+
+De lo contrario, para este tipo de sitios, se tendrá una *duración de la visita* bastante breve, así como un alto *porcentaje de rebote*.
+
+
+Es importante mantener estos conceptos y definiciones en mente al utilizar los reportes de Google Analytics, para así interpretar correctamente la data ofrecida por la herramienta.
+
+
+#Conclusión:
+
+Google Analytics muestra 2 tipos de datos: dimensiones y métricas. Las dimensiones son las características de tus usuarios y sus sesiones. 
+
+Las métricas son mediciones cuantitativas -sumas, promedios, ratios- que describen el comportamiento de los usuarios.
+
+
+Para obtener una lista completa de las métricas y dimensiones existentes en Google Analítics visite:
+
+<https://developers.google.com/analytics/devguides/reporting/core/dimsmets>
+
+\newpage
+
+#Listado de métricas y dimensiones
+
+![GA - Métricas lista](D:\\Starcom\\metricas-list.png)
+
+
+![GA - Métricas lista](D:\\Starcom\\dimensiones-list.png)
+
+

@@ -1,0 +1,545 @@
+periodo,ecommerce,marca,producto,precio.antes,precio.actual,pulgadas,rango,descuento
+2016,ripley,samsung,samsung tv led hd 32'' 32j4000,999,799,32,"S/.500 -
+ S/.1500",-0.2002002
+2016,ripley,samsung,"samsung smart tv led fhd 48"" 3d 48j6400",2799,1999,48,"S/.1500 -
+ S/.2500",-0.285816363
+2016,ripley,lg,lg smart tv led 43'' full hd 43lh5700,1649,1249,43,"S/.500 -
+ S/.1500",-0.242571255
+2016,ripley,lg,lg smart tv led 49'' full hd 49lh5700,1999,1699,49,"S/.1500 -
+ S/.2500",-0.150075038
+2016,ripley,samsung,"samsung smart tv 50ju6500 led uhd 50"" - negro",3699,2399,50,"S/.1500 -
+ S/.2500",-0.351446337
+2016,ripley,lg,"lg smart tv led 49"" ultra hd tv 49uh6500",2799,2199,49,"S/.1500 -
+ S/.2500",-0.214362272
+2016,ripley,lg,"lg tv smart full hd 49"" web os 49lh6000",2099,1799,49,"S/.1500 -
+ S/.2500",-0.142925202
+2016,ripley,samsung,"samsung smart tv led 48"" full hd 48j5300",2299,1799,48,"S/.1500 -
+ S/.2500",-0.217485863
+2016,ripley,haier,"haier televisor led le50k5000n 50""",1799,1399,50,"S/.500 -
+ S/.1500",-0.222345748
+2016,ripley,samsung,samsung smart tv led full hd 40'' 40j5500,2299,1399,40,"S/.500 -
+ S/.1500",-0.391474554
+2016,ripley,lg,"lg tv smart uhd 55"" web os 3 55uh6150",3699,3299,55,"S/.2500 -
+ S/.3500",-0.108137334
+2016,ripley,aoc,aoc tv led full hd 43'' f1361,NA,1199,43,"S/.500 -
+ S/.1500",NA
+2016,ripley,panasonic,panasonic tv led full hd 42'' tc-42as610,1899,999,42,"S/.500 -
+ S/.1500",-0.473933649
+2016,ripley,haier,"haier smart tv 40"" hd le40k5000n",1299,899,40,"S/.500 -
+ S/.1500",-0.307929176
+2016,ripley,sony,"sony tv led 40"" full hd kdl-40r355c",1699,1299,40,"S/.500 -
+ S/.1500",-0.235432607
+2016,ripley,lg,lg tv led full hd 43'' 43lf5100,1399,1199,43,"S/.500 -
+ S/.1500",-0.142959257
+2016,ripley,lg,"lg tv full hd 43"" 43lh5100",1399,1299,43,"S/.500 -
+ S/.1500",-0.071479628
+2016,ripley,lg,"lg smart tv web os 40"" full hd 40lf6350",2218,1399,40,"S/.500 -
+ S/.1500",-0.369251578
+2016,ripley,aoc,aoc smart tv led full hd 49'' le49f1761,1799,1599,49,"S/.1500 -
+ S/.2500",-0.111172874
+2016,ripley,lg,"lg smart tv led 42"" fhd cinema 3d 42lf6450",2299,1699,42,"S/.1500 -
+ S/.2500",-0.260983036
+2016,ripley,lg,"lg smart tv 43"" full hd web os 43lh6000",1699,1399,43,"S/.500 -
+ S/.1500",-0.176574456
+2016,ripley,samsung,"samsung smart tv led fhd 48"" curvo un48j6500",2999,2299,48,"S/.1500 -
+ S/.2500",-0.233411137
+2016,ripley,samsung,samsung smart tv led full hd 48'' 48j5500,2499,1799,48,"S/.1500 -
+ S/.2500",-0.280112045
+2016,ripley,haier,"haier tv led 55"" full hd le55b8000",1999,1599,55,"S/.1500 -
+ S/.2500",-0.20010005
+2016,ripley,sony,sony smart tv led full hd 48'' kdl-48w655d,NA,2199,48,"S/.1500 -
+ S/.2500",NA
+2016,ripley,lg,"lg smart tv led 43"" ultra hd tv 43uf6400",2499,1599,43,"S/.1500 -
+ S/.2500",-0.360144058
+2016,ripley,aoc,aoc smart tv led full hd 55'' le55f1761,2599,2199,55,"S/.1500 -
+ S/.2500",-0.153905348
+2016,ripley,sony,"sony smart tv 50"" fhd 3d kdl50w805c",3799,2999,50,"S/.2500 -
+ S/.3500",-0.210581732
+2016,ripley,aoc,aoc smart tv led full hd 43'' le43f1761,1499,1299,43,"S/.500 -
+ S/.1500",-0.133422282
+2016,ripley,aoc,aoc tv led full hd 49'' le49f1361,NA,1499,49,"S/.500 -
+ S/.1500",NA
+2016,ripley,lg,"lg smart tv 3d 42"" fhd 42lf6400",2299,1699,42,"S/.1500 -
+ S/.2500",-0.260983036
+2016,ripley,sony,"sony tv led 40"" smart full hd kdl-40r555c - negro",1699,1599,40,"S/.1500 -
+ S/.2500",-0.058858152
+2016,ripley,sony,sony smart tv led full hd 40'' kdl-40w655d,NA,1599,40,"S/.1500 -
+ S/.2500",NA
+2016,ripley,samsung,"samsung smart tv 40""€â fhd 3d 40j6400",2299,1599,40,"S/.1500 -
+ S/.2500",-0.304480209
+2016,ripley,samsung,samsung smart tv led 40'' uhd 40ju6000,1999,1699,40,"S/.1500 -
+ S/.2500",-0.150075038
+2016,ripley,sony,"sony tv led 49"" 4k xbr-49x835c",4999,3499,49,"S/.2500 -
+ S/.3500",-0.300060012
+2016,ripley,samsung,samsung smart tv led 60'' full hd 60j6300,3999,3599,60,"S/.3500 -
+ S/.4500",-0.100025006
+2016,ripley,sony,"sony smart tv 50"" fhd 3d kdl-50fa95c",4499,3699,50,"S/.3500 -
+ S/.4500",-0.177817293
+2016,ripley,lg,"lg smart tv led 55"" ultra hd tv 55uh6500",3999,3699,55,"S/.3500 -
+ S/.4500",-0.075018755
+2016,ripley,lg,"lg tv smart super uhd 4k 58"" web os 3 58uh6299",4699,4499,58,"S/.3500 -
+ S/.4500",-0.042562247
+2016,ripley,sharp,sharp smart tv led 60'' 4k lc60ue30u,5999,4699,60,"> S/.4,500",-0.216702784
+2016,ripley,lg,"lg smart tv led 60"" ultra hd tv 60uh6500",4999,4599,60,"> S/.4,500",-0.080016003
+2016,ripley,lg,lg smart tv led 60'' uhd 60uf7700,5799,3999,60,"S/.3500 -
+ S/.4500",-0.310398345
+2016,ripley,panasonic,"panasonic smart tv led 55"" uhd tc-55cx640w",4999,3999,55,"S/.3500 -
+ S/.4500",-0.200040008
+2016,ripley,sony,"sony smart tv 65"" fhd 3d kdl-65w855c",6499,5499,65,"> S/.4,500",-0.153869826
+2016,ripley,lg,"lg smart tv led 55"" super uhd 3d 4k 55uh8500",5499,5199,55,"> S/.4,500",-0.054555374
+2016,ripley,lg,"lg smart tv 60"" uhd 3d 60uf8500",7999,5099,60,"> S/.4,500",-0.362545318
+2016,ripley,lg,"lg smart tv led 65"" ultra hd 4k 65uf6800",7299,4899,65,"> S/.4,500",-0.328812166
+2016,ripley,lg,"lg smart tv 65uf7700 65"" ultra hd 4k",8499,5899,65,"> S/.4,500",-0.305918343
+2016,ripley,sony,"sony tv led ultra delgado 55""  4k xbr-55x905c",8999,6999,55,"> S/.4,500",-0.222246916
+2016,ripley,lg,lg smart tv oled full hd 55'' 3d curvo 55eg9100,9999,6399,55,"> S/.4,500",-0.360036004
+2016,ripley,lg,"lg smart tv 55""€â uhd 3d 55uf9500",9699,6499,55,"> S/.4,500",-0.329930921
+2016,ripley,sony,"sony tv led ultra delgado 65"" ultra hd 4k xbr-65x905c",12999,9999,65,"> S/.4,500",-0.230786984
+2016,ripley,samsung,"samsung smart tv led uhd 75"" 75ju6500",14599,9999,75,"> S/.4,500",-0.315090075
+2016,ripley,samsung,samsung smart tv led 55'' super uhd curvo 55ks9000,NA,10999,55,"> S/.4,500",NA
+2016,ripley,samsung,samsung smart tv led 65'' super uhd curvo 65ks9000,NA,14999,65,"> S/.4,500",NA
+2016,ripley,lg,lg smart tv curvo 65'' oled uhd 3d 65g9600,24999,17900,65,"> S/.4,500",-0.283971359
+2016,ripley,lg,"lg smart tv led 49"" full hd web os 2 49lf5900",2399,1599,49,"S/.1500 -
+ S/.2500",-0.33347228
+2016,ripley,haier,"haier tv led le40b8000 full hd 40""",1099,799,40,"S/.500 -
+ S/.1500",-0.272975432
+2016,ripley,samsung,"samsung smart tv led hd 32"" 32j4300",1299,899,32,"S/.500 -
+ S/.1500",-0.307929176
+2016,ripley,haier,"haier televisor led 28"" hd le28f6600",599,499,28,< S/.500,-0.166944908
+2016,ripley,lg,"lg tv 32"" hd 32lf550b",999,699,32,"S/.500 -
+ S/.1500",-0.3003003
+2016,ripley,haier,haier smart tv  32'' le32k5000n,999,699,32,"S/.500 -
+ S/.1500",-0.3003003
+2016,ripley,haier,"haier tv le24b8000 led hd 24"" - negro",499,399,24,< S/.500,-0.200400802
+2016,ripley,aoc,"aoc tv led 40"" full hd le40f1551",NA,999,40,"S/.500 -
+ S/.1500",NA
+2016,ripley,sony,"sony tv led 32"" hd 32r305c",1199,899,32,"S/.500 -
+ S/.1500",-0.250208507
+2016,ripley,haier,haier tv led hd 32'' le32b7000,699,649,32,"S/.500 -
+ S/.1500",-0.071530758
+2016,ripley,sharp,sharp smart tv led full hd 70'' sq17u,8499,6499,70,"> S/.4,500",-0.235321803
+2016,ripley,aoc,aoc tv led hd 32'' le32w454f,799,699,32,"S/.500 -
+ S/.1500",-0.125156446
+2016,ripley,lg,lg tv led hd 32'' 32lf510b,999,779,32,"S/.500 -
+ S/.1500",-0.22022022
+2016,ripley,aoc,"aoc tv led 32"" hd le32h1352",799,699,32,"S/.500 -
+ S/.1500",-0.125156446
+2016,ripley,lg,"lg tv led 24mt47a 23.6""",NA,569,23.6,"S/.500 -
+ S/.1500",NA
+2016,ripley,panasonic,panasonic tv led hd 32'' tc-32a400l,999,899,32,"S/.500 -
+ S/.1500",-0.1001001
+2016,ripley,aoc,aoc tv led hd 32'' le32w354f,799,699,32,"S/.500 -
+ S/.1500",-0.125156446
+2016,falabella,lg,led curvo 65eg9600 o...,NA,19999,65,"> S/.4,500",NA
+2016,falabella,samsung,"led 48"" un48ju6000",2799,1899,48,"S/.1500 -
+ S/.2500",-0.321543408
+2016,falabella,lg,"oled 55eg9100 55"" we...",9999,6999,55,"> S/.4,500",-0.300030003
+2016,falabella,sony,"led 49"" xbr-49x835c",4999,3499,49,"S/.2500 -
+ S/.3500",-0.300060012
+2016,falabella,aoc,"led full hd 55"" smar...",2599,2199,55,"S/.1500 -
+ S/.2500",-0.153905348
+2016,falabella,lg,"led 49"" ultra hd web...",2999,2299,49,"S/.1500 -
+ S/.2500",-0.233411137
+2016,falabella,sony,"led 65"" kdl65w855c",6999,5499,65,"> S/.4,500",-0.214316331
+2016,falabella,lg,"led 55"" super ultra ...",5999,5199,55,"> S/.4,500",-0.133355559
+2016,falabella,aoc,"led 43"" full hd smar...",1499,1299,43,"S/.500 -
+ S/.1500",-0.133422282
+2016,falabella,lg,"led 49"" full hd smar...",2599,1799,49,"S/.1500 -
+ S/.2500",-0.307810696
+2016,falabella,sony,"led 55"" kdl55w805c",4999,3999,55,"S/.3500 -
+ S/.4500",-0.200040008
+2016,falabella,panasonic,"led 40"" smart tv tc-...",1699,1499,40,"S/.500 -
+ S/.1500",-0.117716304
+2016,falabella,samsung,"led 43"" un43ju6000",2099,1599,43,"S/.1500 -
+ S/.2500",-0.238208671
+2016,falabella,lg,led uhd smart web os...,11999,8999,70,"> S/.4,500",-0.250020835
+2016,falabella,lg,"led 43"" 43uf6400",2499,1699,43,"S/.1500 -
+ S/.2500",-0.320128051
+2016,falabella,samsung,"led 55"" 55j5500",3499,2399,55,"S/.1500 -
+ S/.2500",-0.314375536
+2016,falabella,lg,"led 42"" 42lf6500",2299,1799,42,"S/.1500 -
+ S/.2500",-0.217485863
+2016,falabella,samsung,"led 50"" 50j5500",1799,1699,50,"S/.1500 -
+ S/.2500",-0.055586437
+2016,falabella,sony,"led 55"" android tv x...",5999,4499,55,"S/.3500 -
+ S/.4500",-0.250041674
+2016,falabella,lg,"led 43"" full hd smar...",1399,1299,43,"S/.500 -
+ S/.1500",-0.071479628
+2016,falabella,aoc,"led 49"" full hd smar...",1799,1599,49,"S/.1500 -
+ S/.2500",-0.111172874
+2016,falabella,lg,"led 55"" ultra hd web...",4299,3399,55,"S/.2500 -
+ S/.3500",-0.209351012
+2016,falabella,lg,"led 43"" ultra hd web...",2499,1699,43,"S/.1500 -
+ S/.2500",-0.320128051
+2016,falabella,lg,"led 65"" 65ug8700  we...",10999,7999,65,"> S/.4,500",-0.272752068
+2016,falabella,lg,"led 43"" full hd smar...",1599,1399,43,"S/.500 -
+ S/.1500",-0.125078174
+2016,falabella,lg,"led 75"" ultra hd sma...",13999,10999,75,"> S/.4,500",-0.214301022
+2016,falabella,sony,"led 50"" kdl50w805c",3799,2999,50,"S/.2500 -
+ S/.3500",-0.210581732
+2016,falabella,samsung,"led 55"" super ultra ...",NA,10999,55,"> S/.4,500",NA
+2016,falabella,lg,"led 49"" 49lf6450",2899,2199,49,"S/.1500 -
+ S/.2500",-0.241462573
+2016,falabella,samsung,"led 48"" 48j5500",2499,1899,48,"S/.1500 -
+ S/.2500",-0.240096038
+2016,falabella,lg,"led 58"" 58uf8300 web...",5999,3999,58,"S/.3500 -
+ S/.4500",-0.333388898
+2016,falabella,sony,"led 65"" 4k xbr-65x80...",8999,6999,65,"> S/.4,500",-0.222246916
+2016,falabella,lg,"led 40"" full hd smar...",1399,1199,40,"S/.500 -
+ S/.1500",-0.142959257
+2016,falabella,sony,"led 40"" kdl-40r555c",1699,1299,40,"S/.500 -
+ S/.1500",-0.235432607
+2016,falabella,samsung,"led 48"" 48ju6700 ult...",4399,2499,48,"S/.1500 -
+ S/.2500",-0.431916345
+2016,falabella,samsung,"led 40"" 40j5500",1999,1399,40,"S/.500 -
+ S/.1500",-0.300150075
+2016,falabella,lg,"led 49"" ultra hd web...",3299,1899,49,"S/.1500 -
+ S/.2500",-0.424371022
+2016,falabella,lg,"led 55"" ultra hd 4k ...",4999,3299,55,"S/.2500 -
+ S/.3500",-0.340068014
+2016,falabella,lg,"led 65"" 65uf9500",13999,8999,65,"> S/.4,500",-0.357168369
+2016,falabella,lg,"led 60"" ultra hd sma...",6999,4799,60,"> S/.4,500",-0.314330619
+2016,falabella,samsung,"led 65"" super ultra ...",NA,14999,65,"> S/.4,500",NA
+2016,falabella,sony,"led 65"" 4k ultra hd ...",9999,7999,65,"> S/.4,500",-0.200020002
+2016,falabella,samsung,"led 48"" 48j5300",1699,1599,48,"S/.1500 -
+ S/.2500",-0.058858152
+2016,falabella,lg,"led 55"" 55uf6800 web...",4799,2999,55,"S/.2500 -
+ S/.3500",-0.375078141
+2016,falabella,samsung,"led 50"" 50ju6500",3299,2399,50,"S/.1500 -
+ S/.2500",-0.272809942
+2016,falabella,lg,"led 55"" 55uf8500",5999,3999,55,"S/.3500 -
+ S/.4500",-0.333388898
+2016,falabella,lg,"led 65"" ultra hd sma...",7499,5699,65,"> S/.4,500",-0.240032004
+2016,falabella,samsung,"led 32"" 32j4300",1299,899,32,"S/.500 -
+ S/.1500",-0.307929176
+2016,linio,lg,lg - tv led webos 3d smart full hd 42'' - 42lf6500 - incluye 4 lentes 3d,2299,1849,42,"S/.1500 -
+ S/.2500",-0.195737277
+2016,linio,aoc,televisor aoc led 32'' -le32h1352,899,649,32,"S/.500 -
+ S/.1500",-0.278086763
+2016,linio,imaco,"imaco - tv led hd 16"" - led16hd negro",449,299,16,< S/.500,-0.334075724
+2016,linio,royal,royal tv hd monitor  ry-l16a - negro,499,307,16,< S/.500,-0.384769539
+2016,linio,panasonic,panasonic tv led hd 32'' - tc-32c400l,999,789,32,"S/.500 -
+ S/.1500",-0.21021021
+2016,linio,aoc,"tv led aoc le32w354f led hd 32""  - negro",899,689,32,"S/.500 -
+ S/.1500",-0.233592881
+2016,linio,samsung,"samsung tv super ultra hd 4k smart tv tizen 50""  50js7200",3999,2699,50,"S/.2500 -
+ S/.3500",-0.32508127
+2016,linio,lg,"lg tv led ultra hd 4k 49"" smart webos 2.0 3d - 49ub8300",3899,2897,49,"S/.2500 -
+ S/.3500",-0.256988972
+2016,linio,panasonic,tv led panasonic tc-32as600l smart wifi bluetooth negro,1199,949,32,"S/.500 -
+ S/.1500",-0.208507089
+2016,linio,lg,lg ultra hd 4k smart tv webos 3.0 led 49'' 49uh6100,3299,1899,49,"S/.1500 -
+ S/.2500",-0.424371022
+2016,linio,samsung,tv samsung ultra hd 4k smart tizen  43''  un43ju6000 - negro,2299,1599,43,"S/.1500 -
+ S/.2500",-0.304480209
+2016,linio,panasonic,"panasonic tv led full hd 40"" tc-l40sv7l -negro",1799,1399,40,"S/.500 -
+ S/.1500",-0.222345748
+2016,linio,samsung,tv samsung ultra hd 4k smart tizen  48''  un48ju6000 - negro,2799,1889,48,"S/.1500 -
+ S/.2500",-0.325116113
+2016,linio,samsung,"samsung tv ultra hd smart tv 40""  un40ju6000 -negro",1999,1499,40,"S/.500 -
+ S/.1500",-0.250125063
+2016,linio,imaco,imaco tv led monitor hd 24''  led24hd- negro.,689,549,24,"S/.500 -
+ S/.1500",-0.203193033
+2016,linio,sony,sony tv led smart 48'' full hd  kdl-48r555c,2399,1849,48,"S/.1500 -
+ S/.2500",-0.229262193
+2016,linio,olitec,"olitec televisor led full hd 48"" olivv1048a",1799,1099,48,"S/.500 -
+ S/.1500",-0.389105058
+2016,linio,sony,"sony tv led smart full hd 40"" motion flow xr240 kdl-40w655d",1899,1499,40,"S/.500 -
+ S/.1500",-0.210637177
+2016,linio,samsung,samsung tv led 3d smart tizen full hd 55'' - un55j6400,3499,2699,55,"S/.2500 -
+ S/.3500",-0.228636753
+2016,linio,lg,"lg game tv led full hd 49"" - 49lf5410",2299,1579,49,"S/.1500 -
+ S/.2500",-0.313179643
+2016,linio,samsung,samsung tv monitor led hd 24'' - lt24e310,899,549,24,"S/.500 -
+ S/.1500",-0.389321468
+2016,linio,lg,"lg - tv monitor led 23.6"" hd - 24mt47a",699,549,23,"S/.500 -
+ S/.1500",-0.214592275
+2016,linio,samsung,samsung tv led smart full hd 48'' un48j5300 - negro,2499,1699,48,"S/.1500 -
+ S/.2500",-0.320128051
+2016,linio,haier,haier tv led live green 24 le24b8000,699,499,24,< S/.500,-0.286123033
+2016,linio,aoc,"aoc - tv led 49"" full hd le49f1361 - negro",1699,1499,49,"S/.500 -
+ S/.1500",-0.117716304
+2016,linio,lg,televisor lg led smart full hd 43'' 43lf6350,1999,1499,43,"S/.500 -
+ S/.1500",-0.250125063
+2016,linio,lg,"lg tv led 43""  full hd 43lf5410 -negro",1499,1299,43,"S/.500 -
+ S/.1500",-0.133422282
+2016,linio,samsung,samsung tv led smart tizen full hd 50'' un50j5500 - plateado,2699,1799,50,"S/.1500 -
+ S/.2500",-0.333456836
+2016,linio,lg,"lg - televisor led 32"" hd 32lf550b",1299,857,32,"S/.500 -
+ S/.1500",-0.34026174
+2016,linio,lg,televisor lg led 4k smart ultra hd 40'' 40ub8000-negro,2299,1799,40,"S/.1500 -
+ S/.2500",-0.217485863
+2016,linio,lg,lg - reproductor blu-ray smart 3d bp640 - negro,629,419,40,< S/.500,-0.333863275
+2016,linio,lg,"lg tv smart  led full hd 49"" - 49lf6350",2499,1887,49,"S/.1500 -
+ S/.2500",-0.244897959
+2016,linio,aoc,"aoc - tv led 58"" full hd le58f1352 - negro",2699,2299,58,"S/.1500 -
+ S/.2500",-0.148203038
+2016,linio,nex,"televisor led 32"" hd nex le3208tva-negro",799,597,32,"S/.500 -
+ S/.1500",-0.25281602
+2016,linio,lg,"lg tv smart webos 2.0 ultra hd  4k 43"" - 43uf6400",2299,1679,43,"S/.1500 -
+ S/.2500",-0.269682471
+2016,linio,lg,"lg tv smart webos 2.0 full hd 43"" 43lf5900 -negro",1999,1499,43,"S/.500 -
+ S/.1500",-0.250125063
+2016,linio,lg,"lg smart tv 32"" hd webos 2.0 32lf595b",1099,939,32,"S/.500 -
+ S/.1500",-0.145586897
+2016,linio,samsung,samsung tv led 3d smart full hd 40'' tizen un40j6400 - negro,2499,1569,40,"S/.1500 -
+ S/.2500",-0.37214886
+2016,linio,panasonic,"panasonic - tv led 32"" full  hd tc32as600hl smart tv - negro",1099,999,32,"S/.500 -
+ S/.1500",-0.090991811
+2016,linio,imaco,imaco tv led hd 19''  led19hd - negro,499,369,19,< S/.500,-0.260521042
+2016,linio,samsung,tv samsung fhd   40'' un43j5000 - negro,1599,1319,40,"S/.500 -
+ S/.1500",-0.175109443
+2016,linio,sony,sony tv led full hd 40'' - kdl-40r355c,1699,1299,40,"S/.500 -
+ S/.1500",-0.235432607
+2016,linio,daewoo,televisor full hd daewoo l43r630akst led 43'',1299,1099,43,"S/.500 -
+ S/.1500",-0.153964588
+2016,linio,lg,"lg - monitor tv 28"" 28mt47a - negro",999,699,28,"S/.500 -
+ S/.1500",-0.3003003
+2016,linio,samsung,televisor samsung led smart full hd 40'' un40j5500 - plateado,1999,1389,40,"S/.500 -
+ S/.1500",-0.305152576
+2016,linio,samsung,samsung tv curvo smart tizen full hd 48'' un48j6500-plateado,2799,2199,48,"S/.1500 -
+ S/.2500",-0.214362272
+2016,linio,altron,"altron - televisor led altron 50"" 50hd8800 - negro",1699,1599,50,"S/.1500 -
+ S/.2500",-0.058858152
+2016,linio,lg,televisor lg led webos 3d smart ultra hd 49'' 49uf8500,4199,3299,49,"S/.2500 -
+ S/.3500",-0.214336747
+2016,linio,sony,"sony tv led hd 32"" kdl-32r305c",1199,899,32,"S/.500 -
+ S/.1500",-0.250208507
+2016,linio,lg,"lg tv 55"" smart ultra hd 4k cinema 3d 55ub8500.",4899,3749,55,"S/.3500 -
+ S/.4500",-0.234741784
+2016,linio,lg,lg - tv led hd 32'' 32lx330,999,849,32,"S/.500 -
+ S/.1500",-0.15015015
+2016,linio,samsung,samsung tv led hd 32'' un32j4000 - negro,999,769,32,"S/.500 -
+ S/.1500",-0.23023023
+2016,linio,sony,sony tv led 32'' smart hd - 32r505c,1299,1189,32,"S/.500 -
+ S/.1500",-0.084680523
+2016,linio,daewoo,"daewoo - tv led 32"" l32r640ats - negro",899,709,32,"S/.500 -
+ S/.1500",-0.21134594
+2016,linio,aoc,"tv led  aoc 24"" hd le24h1351-negro",699,529,24,"S/.500 -
+ S/.1500",-0.243204578
+2016,linio,sony,"sony tv led smart hd 32"" motion flow xr240 kdl-32w605d",1399,1199,32,"S/.500 -
+ S/.1500",-0.142959257
+2016,linio,nex,"nex - televisor led 32"" hd le3208tva - negro",699,597,32,"S/.500 -
+ S/.1500",-0.145922747
+2016,linio,sony,"sony smart tv 32"" hd kdl-32r505c - negro",1499,1249,32,"S/.500 -
+ S/.1500",-0.166777852
+2016,linio,sony,"sony smart tv 40"" hd kdl-40r555c",2059,1649,40,"S/.1500 -
+ S/.2500",-0.199125789
+2016,linio,lg,"lg tv led ultra-slim full hd 47"" - 47ly340c",1899,1595,47,"S/.1500 -
+ S/.2500",-0.160084255
+2016,linio,panasonic,"panasonic tv led 40""  tc40cs600 - negro",1499,1399,40,"S/.500 -
+ S/.1500",-0.066711141
+2016,linio,haier,"haier tv le24b8000 led hd 24"" - negro",599,497,24,< S/.500,-0.170283806
+2016,linio,panasonic,led panasonic tc-32a400l  high definition black,1099,799,32,"S/.500 -
+ S/.1500",-0.272975432
+2016,linio,sony,sony - tv led 3d wi-fi full hd 55ã‚â´ã‚â´ - kdl-55w955a,6000,4009.99,55,"S/.3500 -
+ S/.4500",-0.331668333
+2016,linio,panasonic,televisor panasonic tvl led full hd 40''-negro,1869,1399,40,"S/.500 -
+ S/.1500",-0.251471375
+2016,linio,lg,"lg smart tv  webos 2.0 full hd 40"" - 40lf6350",1699,1377,40,"S/.500 -
+ S/.1500",-0.189523249
+2016,linio,sony,"sony - televisor led full hd 48"" smart kdl-48w655d - negro",2749,2199,48,"S/.1500 -
+ S/.2500",-0.200072754
+2016,linio,lg,"lg tv led hd 32"" - 32lf550b",1099,899,32,"S/.500 -
+ S/.1500",-0.181983621
+2016,linio,samsung,samsung tv led smart ultra hd 4k 50'' tizen un50ju6500 - negro,3299,2399,50,"S/.1500 -
+ S/.2500",-0.272809942
+2016,linio,lg,televisiãƒâ³n lg 49lf5900 smart tv 49''-plateado,2299,1899,49,"S/.1500 -
+ S/.2500",-0.173988691
+2016,linio,lg,lg super ultra hd 4k smart tv webos 3.0  led 49'' 49uh7700,3799,2999,49,"S/.2500 -
+ S/.3500",-0.210581732
+2016,linio,lg,tv led lg  32lx330c funcion hotelera hd -plomo,999,819,32,"S/.500 -
+ S/.1500",-0.18018018
+2016,linio,samsung,samsung tv led smart hd 32'' un32j4300 - negro.,999,899.99,32,"S/.500 -
+ S/.1500",-0.099109109
+2016,linio,lg,lg smart tv webos 2.0 3d full hd 42'' 42lf6450 - incluye 4 lentes 3d,2299,1499,42,"S/.500 -
+ S/.1500",-0.347977381
+2016,linio,samsung,samsung - televisor led 3d smarttv 46ã‚â´ã‚â´ un-46f8000.,4499,3799,46,"S/.3500 -
+ S/.4500",-0.155590131
+2016,linio,samsung,samsung - tv led full hd 48'' 48j5000 - negro,1999.9,1549,48,"S/.1500 -
+ S/.2500",-0.225461273
+2016,linio,lg,lg - tv led webos 3d smart full hd 42'' - 42lf6400,2299,1799,42,"S/.1500 -
+ S/.2500",-0.217485863
+2016,linio,samsung,samsung tv led smart ultra hd 55'' tizen un55ju6500 - negro,3999,3199,55,"S/.2500 -
+ S/.3500",-0.200050013
+2016,linio,sony,"tv led sony 32"" kdl-32r305c led hd 720px - negro",1199,899,32,"S/.500 -
+ S/.1500",-0.250208507
+2016,linio,daewoo,"televisor daewoo led 40"" l40r640ats - negro",1299,1099,40,"S/.500 -
+ S/.1500",-0.153964588
+2016,linio,samsung,"samsung - televisor led full hd 48"" un48j5000 - negro",2189,1749,48,"S/.1500 -
+ S/.2500",-0.201005025
+2016,linio,samsung,samsung tv curved smart 3d suhd tizen 65'' un65js9000 - plateado,14879,11899,65,"> S/.4,500",-0.200282277
+2016,linio,blackline,blackline - tv led hd 39'' bl390led - negro,1099,799,39,"S/.500 -
+ S/.1500",-0.272975432
+2016,linio,lg,"televisor lg led full hd 43"" 43lf5100-negro",1499,1249,43,"S/.500 -
+ S/.1500",-0.166777852
+2016,linio,lg,"lg tv led smart 55"" webos 2.0 55lf5950 -negro",3099,2799,55,"S/.2500 -
+ S/.3500",-0.096805421
+2016,linio,lg,"television lg 32lf510b led tv 32""-negro",999,799,32,"S/.500 -
+ S/.1500",-0.2002002
+2016,linio,nex,"nex - televisor led 32"" hd le3208tva - negro",879,699,32,"S/.500 -
+ S/.1500",-0.204778157
+2016,linio,panasonic,"televisor panasonictc-43cs630l led 43"" full hd smart - plateado",1899,1729,43,"S/.1500 -
+ S/.2500",-0.0895208
+2016,linio,aoc,televisor aoc led hd 32'' le32w354f - negro,899,799,32,"S/.500 -
+ S/.1500",-0.111234705
+2016,linio,panasonic,televisor panasonic tv led full hd 40''-negro,1699,1369,40,"S/.500 -
+ S/.1500",-0.194231901
+2016,linio,sony,"sony tv led smart full hd 48"" motion flow xr240 kdl-48w655d",2699,1899,48,"S/.1500 -
+ S/.2500",-0.296406076
+2016,linio,lg,"lg tv led full hd 49""  - 49lf5100",1799,1619,49,"S/.1500 -
+ S/.2500",-0.100055586
+2016,linio,aoc,"aoc tv led 24"" le24w454l- negro",699,519,24,"S/.500 -
+ S/.1500",-0.25751073
+2016,linio,daewoo,televisor daewoo led hd 32'' - l32q530aks,899,799,32,"S/.500 -
+ S/.1500",-0.111234705
+2016,linio,sony,"sony - televisor led 32"" hd kdl-32r305c - negro",1159,929,32,"S/.500 -
+ S/.1500",-0.198446937
+2016,linio,lg,televisor lg led hd 32'' 32lx330,999,899,32,"S/.500 -
+ S/.1500",-0.1001001
+2016,linio,lg,"televisor lg led smart webos 2.0 full hd 55"" - 55lf6350",3399,2899,55,"S/.2500 -
+ S/.3500",-0.147102089
+2016,linio,aoc,"aoc - tv led 43"" le43f1361 - negro",1399,1199,43,"S/.500 -
+ S/.1500",-0.142959257
+2016,linio,samsung,televisor samsung tv curved smart ultra hd tizen un48ju6700-negro,4999,2399,48,"S/.1500 -
+ S/.2500",-0.520104021
+2016,linio,lg,"lg gametv  led full hd 43"" - 43lf5400",1999,1462,43,"S/.500 -
+ S/.1500",-0.268634317
+2016,linio,lg,lg full hd smart tv webos 3.0 43'' 43lh6000,2299,1599,43,"S/.1500 -
+ S/.2500",-0.304480209
+2016,linio,samsung,"samsung tv smart  led full hd  43"" 43j5200-negro",1999,1399,43,"S/.500 -
+ S/.1500",-0.300150075
+2016,linio,samsung,"samsung - monitor led 32"" md32c - negro",2299,1959,32,"S/.1500 -
+ S/.2500",-0.147890387
+2016,linio,lg,"televisor lg 43lf5900 smart webos 2.0 full hd 43""-negro",1799,1397,43,"S/.500 -
+ S/.1500",-0.223457476
+2016,linio,daewoo,"daewoo - tv led 32"" l32r640ats - negro..",999,679,32,"S/.500 -
+ S/.1500",-0.32032032
+2016,linio,samsung,"samsung - monitor full hd 40"" md40c - negro",2999,2839,40,"S/.2500 -
+ S/.3500",-0.053351117
+2016,linio,panasonic,panasonic - tv led 40'' - tc-40a400l,NA,1399,40,"S/.500 -
+ S/.1500",NA
+2016,linio,blackline,blackline - tv led hd 28'' bl280led  sonido stereo,899,619,28,"S/.500 -
+ S/.1500",-0.311457175
+2016,linio,panasonic,televisor panasonic tv led full hd 40''-negro,1499,1389,40,"S/.500 -
+ S/.1500",-0.073382255
+2016,linio,daewoo,"daewoo - tv led 32"" l32r640ats - negro",899,799,32,"S/.500 -
+ S/.1500",-0.111234705
+2016,linio,lg,lg ultra hd 4k smart tv webos 3.0 led 49'' 49uh6500,2999,2799,49,"S/.2500 -
+ S/.3500",-0.066688896
+2016,linio,aoc,televisor aoc led 49'' full hd le49f1361 - negro,1699,1499,49,"S/.500 -
+ S/.1500",-0.117716304
+2016,linio,lg,televisor lg slim ultra hd 3d webos 2.0 55'' 55uf8500 - plateado,4999,4299,55,"S/.3500 -
+ S/.4500",-0.140028006
+2016,linio,samsung,samsung tv led smart tizen ultra hd 4k 60'' tizen un60ju6500  - negro,5999,4299,60,"S/.3500 -
+ S/.4500",-0.283380563
+2016,linio,lg,lg ultra hd 4k smart tv webos 3.0 led 55'' 55uh6500,4299,3899,55,"S/.3500 -
+ S/.4500",-0.093044894
+2016,linio,aoc,"aoc - tv led 24"" hd le24h1351-negro",699,549,24,"S/.500 -
+ S/.1500",-0.214592275
+2016,linio,lg,televisor lg led webos smart ultra hd 49'' 49uf6900,2899,2229,49,"S/.1500 -
+ S/.2500",-0.231114177
+2016,linio,lg,"lg oled tv ultra hd 4k curvo 65"" 3d smart webos 2.0  65eg9600",29999,24999,65,"> S/.4,500",-0.166672222
+2016,linio,lg,"lg televisor led full hd smart 43"" 43lh5700",1499,1379,43,"S/.500 -
+ S/.1500",-0.080053369
+2016,linio,samsung,samsung tv led 3d smart full hd 48'' - 48j6400,2499,2099,48,"S/.1500 -
+ S/.2500",-0.160064026
+2016,linio,lg,lg ultra hd 4k smart tv webos 3.0 led 55'' 55uh6150,3999,3399,55,"S/.2500 -
+ S/.3500",-0.150037509
+2016,linio,miray,"miray tv led 19"" - ledom-1911",599,449,19,< S/.500,-0.250417362
+2016,linio,samsung,samsung tv smart full hd curvo 55'' tizen un55j6500 - plateado,3999,3199,55,"S/.2500 -
+ S/.3500",-0.200050013
+2016,linio,lg,lg full hd smart tv webos 3.0 led 49'' 49lh6000,2599,2199,49,"S/.1500 -
+ S/.2500",-0.153905348
+2016,linio,samsung,"samsung smart tv tizen 48"" full hd led slim un48j5500 led 48''",1899,1811.9,48,"S/.1500 -
+ S/.2500",-0.045866245
+2016,linio,aoc,"aoc - tv led 55"" full hd le55f1361 - negro",2299,1999,55,"S/.1500 -
+ S/.2500",-0.130491518
+2016,linio,lg,lg tv led hd 32'' 32lx300c,999,799,32,"S/.500 -
+ S/.1500",-0.2002002
+2016,linio,samsung,"samsung tv led curvo smart 3d 48"" special edition - un48h6800ag",3199,2797,48,"S/.2500 -
+ S/.3500",-0.12566427
+2016,linio,samsung,"televisor samsung led 4k ultra hd 55"" 55f9000",8999,5999,55,"> S/.4,500",-0.333370374
+2016,linio,haier,"haier tv led full hd 40"" - le40b8000",1299,999,40,"S/.500 -
+ S/.1500",-0.230946882
+2016,linio,daewoo,"televisor daewoo led 32"" l32r640ats - negro",999,699,32,"S/.500 -
+ S/.1500",-0.3003003
+2016,linio,lg,"lg oled tv ultra hd 4k curvo 55"" 3d smart webos 2.0  55eg9200",9999,8999,55,"> S/.4,500",-0.100010001
+2016,linio,lg,"lg oled tv curvo 3d smart webos 2.0 55"" full hd 55eg9100",12999,9999,55,"> S/.4,500",-0.230786984
+2016,linio,lg,lg - oled curvo 65eg9600 ultra hd webos cinema 3d,20500,17999,65,"> S/.4,500",-0.122
+2016,linio,lg,televisor lg led webos smart ultra hd  60ã¢â€â™ã¢â€â™ 60uf7700 - negro,4999,4299,60,"S/.3500 -
+ S/.4500",-0.140028006
+2016,linio,lg,lg - tv oled curvo smart 3d 55'' - 55ec9300,7999,6599,55,"> S/.4,500",-0.175021878
+2016,linio,samsung,samsung tv led smart hd 32'' un32j4300 - negro.,1299,849,32,"S/.500 -
+ S/.1500",-0.346420323
+2016,linio,samsung,televisor samsung ultra hd 55'' tizen un55ju6500 led- negro,4999,3999,55,"S/.3500 -
+ S/.4500",-0.200040008
+2016,linio,lg,lg tv led webos 3d smart full hd 49'' - 49lf6450,3099,2479,49,"S/.1500 -
+ S/.2500",-0.200064537
+2016,linio,lg,lg - tv led webos 3d smart ultra hd curvo  65'' 65ug8700 - plateado,10999,8969,65,"> S/.4,500",-0.184562233
+2016,linio,aoc,"aoc tv led full hd 58"" le58f1552",2999,2339,58,"S/.1500 -
+ S/.2500",-0.220073358
+2016,linio,samsung,samsung tv smart full hd curvo 48'' tizen un48j6500,2999,2599,48,"S/.2500 -
+ S/.3500",-0.133377793
+2016,linio,aoc,"televisor aoc led 24"" hd le24h1351-negro",599,549,24,"S/.500 -
+ S/.1500",-0.083472454
+2016,linio,lg,"lg smart  4k ultra hd 55"" - 55ub8200",4499,3549,55,"S/.3500 -
+ S/.4500",-0.211158035
+2016,linio,lg,"lg game tv led full hd 49"" - 49lf5400",2499,1749,49,"S/.1500 -
+ S/.2500",-0.300120048
+2016,linio,daewoo,daewoo tv led  full hd 43''l43r630aksp  - negro,1099,1059,43,"S/.500 -
+ S/.1500",-0.036396724
+2016,linio,panasonic,"televisor panasonic tv led 50"" ultra hd 4k smart-negro",4049,2879,50,"S/.2500 -
+ S/.3500",-0.288960237
+2016,linio,haier,"haier - tv led digital hd 28"" le28f660028-negro",899,699,28,"S/.500 -
+ S/.1500",-0.22246941
+2016,linio,aoc,"aoc - tv led smart 49"" le49f1761 - negro",2199,1799,49,"S/.1500 -
+ S/.2500",-0.181900864
+2016,linio,aoc,"aoc - tv led smart 55"" le55f1761 - negro",2999,2599,55,"S/.2500 -
+ S/.3500",-0.133377793
+2016,linio,samsung,samsung tv led smart tizen full hd 60'' un60j6300 - negro.,4499,3499,60,"S/.2500 -
+ S/.3500",-0.222271616
+2016,linio,lg,lg smart tv oled uhd 55'' 3d curvo 55eg9200,11000,9999,55,"> S/.4,500",-0.091
+2016,linio,hisense,"televisor hd hisense 32d36 lcd 32""",999,799,32,"S/.500 -
+ S/.1500",-0.2002002
+2016,linio,samsung,samsung - tv led smart ultra hd - un50hu7000,4379,3499,50,"S/.2500 -
+ S/.3500",-0.200959123
+2016,linio,aoc,"aoc - tv led smart 43"" le43f1761 - negro",1699,1499,43,"S/.500 -
+ S/.1500",-0.117716304
+2016,linio,panasonic,panasonic tv led smart full hd 50'' - tc-50as600,2699,2399,50,"S/.1500 -
+ S/.2500",-0.111152279
+2016,linio,lg,"tv lg 43lf5100 televisor led 43"" full hd negro",1499,1239,43,"S/.500 -
+ S/.1500",-0.173448966
+2016,linio,miray,"televisor hd miray ledom-20is ledã‚â  20""",599,449,20,< S/.500,-0.250417362
+2016,linio,samsung,"samsung - televisor led hd 48"" smart un48j5300 - negro",2879,2299,48,"S/.1500 -
+ S/.2500",-0.20145884
+2016,linio,miray,"televisor hd miray ledom-324is ledã‚â  32""",999,799,32,"S/.500 -
+ S/.1500",-0.2002002
+2016,linio,sony,"sony - televisor led full hd 48"" smart kdl-48w655d - negro",2499,2119,48,"S/.1500 -
+ S/.2500",-0.152060824
+2016,linio,samsung,samsung - tv led smart curvo 3d full hd 48ã¢â€â un48h8000 -negro.,4999,3999,48,"S/.3500 -
+ S/.4500",-0.200040008
+2016,linio,panasonic,televisor panasonic tv led full hd smart 50'' tc-50cs600l -negro,2899,2419,50,"S/.1500 -
+ S/.2500",-0.165574336
+2016,linio,king master,"televisor hd king master km-l19h3 ledã‚â  19""",499,399,19,< S/.500,-0.200400802
+2016,linio,panasonic,led panasonic tc-32a400l high definition black,1099,797,32,"S/.500 -
+ S/.1500",-0.274795268
+2016,linio,samsung,samsung smart tv full hd curvo 48''-plateado,2999,2599,48,"S/.2500 -
+ S/.3500",-0.133377793
+2016,linio,daewoo,"televisor hd daewoo l32r630aksp led 32""",999,759,32,"S/.500 -
+ S/.1500",-0.24024024
+2016,linio,samsung,tv samsung fhd 40'' un43j5000-negro,1599,1399,40,"S/.500 -
+ S/.1500",-0.125078174
+2016,linio,panasonic,televisor panasonic tvl led ultra hd 55''-negro,5399,3829,55,"S/.3500 -
+ S/.4500",-0.290794592
+2016,linio,lg,"tv led lg 49lf5100 televisor led 49"" full hd negro",1899,1519,49,"S/.1500 -
+ S/.2500",-0.200105319
+2016,linio,aoc,televisor aoc led 32'' -le32h1352,899,697,32,"S/.500 -
+ S/.1500",-0.224694105
+2016,linio,sony,sony - tv  led 3d wi-fi full hd 55ã‚â´ã‚â´ - kdl-55w955a,NA,4999,55,"> S/.4,500",NA
+2016,linio,daewoo,"tv led daewoo 32"" l32r630aksp hd 720p- negro",NA,899,32,"S/.500 -
+ S/.1500",NA
+2016,linio,sony,"sony tv led hd 32"" kdl-32r305c -negro",NA,999,32,"S/.500 -
+ S/.1500",NA
+2016,linio,samsung,samsung - tv led smart curvo 3d ultra hd 65ã¢â€â un65hu9000 - gris,NA,14999,65,"> S/.4,500",NA
+2016,linio,samsung,tv led samsung un48j5500ag smart full hd tizen 48'' negro/plateado,NA,2399,48,"S/.1500 -
+ S/.2500",NA
