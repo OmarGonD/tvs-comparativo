@@ -466,6 +466,12 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 
 
 
+############################################################################
+# Diferencia porcentual por marca en LINIO.  No se puede hacer interactiva.#
+########################### Usar GGPLOT2 ###################################
+############################################################################
+
+
 
 tt8 <- "Linio - variación % descuentos según rango de precios"
 stt8 <- "\n"
@@ -506,11 +512,20 @@ l + geom_boxplot(aes(colour = rango), outlier.colour = "red", outlier.shape = 1,
 
 
 
+###############################################
+######### Precio Actual por Marca #############
+###############################################
+
+tvs.ripley$periodo <- factor(tvs.ripley$periodo, levels = c(2017,2016),
+                            ordered = T)
 
 
+tvs.falabella$periodo <- factor(tvs.falabella$periodo, levels = c(2017,2016),
+                            ordered = T)
 
-#########
 
+tvs.linio$periodo <- factor(tvs.linio$periodo, levels = c(2017,2016),
+                                          ordered = T)
 
 
 
@@ -519,6 +534,64 @@ precio.actual.ripley <- plot_ly(tvs.ripley, x = ~periodo, y = ~precio.actual, co
   layout(boxmode = "group", title = "Ripley: distribución de los precios de TVs por marca")
 
 precio.actual.ripley
+
+
+
+
+precio.actual.falabella <- plot_ly(tvs.falabella, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
+  layout(boxmode = "group", title = "Falabella: distribución de los precios de TVs por marca")
+
+precio.actual.falabella
+
+
+
+### Linio: no se pueden generar boxplots de forma interactiva.
+###### Usaremos ggplot2 para generar gráficos estáticos ######
+
+
+
+# 
+l <- ggplot(tvs.linio, aes(factor(marca), precio.actual))
+
+
+
+l + geom_boxplot(aes(colour = rango), outlier.colour = "red", outlier.shape = 1,
+                 outlier.size = 4) +
+  facet_grid_paginate(periodo ~ rango, page = 1) +
+  #theme_ipsum_rc(grid = "Y") +
+  theme(axis.text.x = element_text(colour="grey20",size=12,hjust=.5,vjust=.5,face="plain"),
+        axis.text.y = element_text(colour="grey20",size=10,hjust=1,vjust=0,face="plain"),  
+        axis.title.x = element_text(colour="grey20",size=18,angle=0,hjust=.5,vjust=0,face="plain"),
+        axis.title.y = element_text(colour="grey20",size=16,angle=90,hjust=.5,vjust=.5,face="plain"),
+        plot.title = element_text(vjust=2, size = 24,face="bold"),
+        plot.subtitle = element_text(vjust=2, size = 16),
+        plot.caption = element_text(vjust=2, size = 16),
+        legend.position = "none",
+        legend.box = "horizontal",
+        legend.title=element_blank(),
+        legend.text=element_text(size=18),
+        strip.text = element_text(size = 22, hjust = 0, vjust = -.5, face = "bold")) +
+  scale_y_continuous(labels=comma) +
+  # scale_fill_manual(
+  #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
+  #              "samsung" = "#7ec0ee", "lg" = "#A21420",
+  #              "aoc" = "#9DCC27", "sharp" = "#BEBBDA", "hyundai" = "#FCB442")) +
+  # labs(title = tt5, subtitle = stt5, caption = cptn,
+  #      x = "", y = "") +
+  labs(title = tt8, subtitle = stt8, caption = cptn,
+       x = "", y = "") 
+#scale_color_ipsum() 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
