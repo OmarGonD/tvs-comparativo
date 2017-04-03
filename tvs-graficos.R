@@ -30,8 +30,7 @@ tvs <- source_data("https://www.dropbox.com/s/6arewitgenhwwba/2017-03-15-total-t
 
 
 tvs <- tvs %>%
-  filter(marca != is.na(marca),
-         pulgadas < 100 | pulgadas != is.na(pulgadas))
+       filter(pulgadas < 90)
 
 
 
@@ -82,8 +81,12 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
         plot.title = element_text(size = 24,vjust=2,face="bold"),
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
+        panel.border = element_rect(colour = "white"),
         legend.position = "none",
-        strip.text = element_text(size = 22, hjust = 0.08, vjust = -0.5)) +
+        strip.text = element_text(size = 22, hjust = 0.08, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   geom_text(aes(label=cantidad), vjust=-0.25, size = 6) +
   ylim(0, 600) +
   labs(title = tt1, subtitle = stt1, caption = cptn,
@@ -161,11 +164,12 @@ ggplotly(ggplot(tvs.rango, aes(x = rango, y = cantidad, fill = ecommerce)) +
                  plot.title = element_text(size = 24,vjust=4, face="bold"),
                  plot.subtitle = element_text(vjust=2, size = 16),
                  plot.caption = element_text(vjust=2, size = 16),
-                 legend.title = element_text(colour="grey40", size=16, face="bold"),
-                 legend.text = element_text(colour="grey10", size=16, face="bold"),
-                 #strip.text.x = element_text(size = 14, angle = 0),
-                 legend.position = "top",
-                 strip.text = element_text(size = 22, hjust = 0.06, vjust = -.5)) +
+                 panel.border = element_rect(colour = "white"),
+                 legend.position = "none",
+                 strip.text = element_text(size = 22, hjust = 0.01, vjust = -0.5),
+                 strip.background = element_rect(colour = "white", fill = "white"),
+                 panel.grid.major.y = element_blank(),
+                 panel.grid.minor.y = element_blank()) +
            #geom_text(aes(label=cantidad), hjust=-0.25, size = 4) +
            ylim(0, 300) +
            labs(title = tt2, subtitle = stt2, caption = cptn,
@@ -285,7 +289,7 @@ tvs.ripley.tvs.por.rango <- tvs.ripley  %>%
                             group_by(periodo, rango, marca) %>%
                             summarise(cantidad.marca = length(marca)) %>% 
                             #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
-                            mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),2))
+                            mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),4))
 
 
 
@@ -334,10 +338,11 @@ ggplot(tvs.ripley.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
         legend.position = "top",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=10),
-        strip.text = element_text(size = 12, hjust = 0.05, vjust = 2, face = "bold")) +
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 22, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(labels=percent) +
   # scale_fill_manual(
   #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
@@ -359,7 +364,7 @@ tvs.falabella.tvs.por.rango <- tvs.falabella  %>%
   group_by(periodo, rango, marca) %>%
   summarise(cantidad.marca = length(marca)) %>% 
   #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
-  mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),2))
+  mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),4))
 
 
 
@@ -398,10 +403,11 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
         legend.position = "top",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=10),
-        strip.text = element_text(size = 12, hjust = 0.05, vjust = -.5, face = "bold")) +
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 22, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(labels=percent) +
   # scale_fill_manual(
   #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
@@ -419,10 +425,10 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
 
 
 tvs.linio.tvs.por.rango <- tvs.linio  %>%
-                            group_by(periodo, rango, marca) %>%
-                            summarise(cantidad.marca = length(marca)) %>% 
-                            #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
-                            mutate(porcentaje_tvs = cantidad.marca/sum(cantidad.marca))
+  group_by(periodo, rango, marca) %>%
+  summarise(cantidad.marca = length(marca)) %>% 
+  #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
+  mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),4))
 
 
 
@@ -466,10 +472,11 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
         legend.position = "top",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=10),
-        strip.text = element_text(size = 12, hjust = 0.05, vjust = -.5, face = "bold")) +
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 22, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(labels=percent) +
   # scale_fill_manual(
   #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
@@ -496,44 +503,6 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 # Diferencia porcentual por marca en LINIO.  No se puede hacer interactiva.#
 ########################### Usar GGPLOT2 ###################################
 ############################################################################
-
-
-
-tt8 <- "Linio - variación % descuentos según rango de precios"
-stt8 <- "\n"
-# 
-# 
-# 
-l <- ggplot(tvs.linio.porcentajes, aes(factor(marca), dif.porcentual))
-
-
-
-l + geom_boxplot(aes(colour = rango), outlier.colour = "red", outlier.shape = 1,
-                 outlier.size = 4) +
-  #facet_grid_paginate(periodo ~ rango, page = 1) +
-  #theme_ipsum_rc(grid = "Y") +
-  theme(axis.text.x = element_text(colour="grey20",size=12,hjust=.5,vjust=.5,face="plain"),
-        axis.text.y = element_text(colour="grey20",size=10,hjust=1,vjust=0,face="plain"),  
-        axis.title.x = element_text(colour="grey20",size=18,angle=0,hjust=.5,vjust=0,face="plain"),
-        axis.title.y = element_text(colour="grey20",size=16,angle=90,hjust=.5,vjust=.5,face="plain"),
-        plot.title = element_text(vjust=2, size = 24,face="bold"),
-        plot.subtitle = element_text(vjust=2, size = 16),
-        plot.caption = element_text(vjust=2, size = 16),
-        legend.position = "none",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=14),
-        strip.text = element_text(size = 22, hjust = 0, vjust = -.5, face = "bold")) +
-  scale_y_continuous(labels=comma) +
-  # scale_fill_manual(
-  #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
-  #              "samsung" = "#7ec0ee", "lg" = "#A21420",
-  #              "aoc" = "#9DCC27", "sharp" = "#BEBBDA", "hyundai" = "#FCB442")) +
-  # labs(title = tt5, subtitle = stt5, caption = cptn,
-  #      x = "", y = "") +
-  labs(title = tt8, subtitle = stt8, caption = cptn,
-       x = "", y = "") 
-  #scale_color_ipsum() 
 
 
 
@@ -682,19 +651,22 @@ tv.pulgadas.vs.pulgadas$marca <- as.factor(tv.pulgadas.vs.pulgadas$marca)
 pulgadas_precio <- ggplot(tv.pulgadas.vs.pulgadas, aes(x = pulgadas, y = precio.actual)) + 
   geom_point(aes(color=marca),size = 2,alpha = 0.4) +
   facet_grid(ecommerce ~ periodo, switch = "y") +
-  #theme_ipsum_rc(grid = "Y") +
+  theme_bw() +
   theme(axis.text.x = element_text(colour="grey10",size=10,hjust=.5,vjust=.5,face="plain"),
         axis.text.y=element_blank(),axis.ticks=element_blank(),  
         axis.title.x = element_text(colour="grey40",size=16,angle=0,hjust=.5,vjust=0,face="plain"),
         axis.title.y = element_text(colour="grey40",size=16,angle=90,hjust=.5,vjust=.5,face="plain"),
+        legend.position = "none",
         plot.title = element_text(size = 24,vjust=4, face="bold"),
         plot.subtitle = element_text(vjust=2, size = 8),
         plot.caption = element_text(vjust=2, size = 8),
         legend.title = element_text(colour="grey40",size=14,hjust=.5,vjust=.5,face="bold"),
         legend.text = element_text(colour="grey10", size=18, face="plain"),
-        strip.text.x = element_text(size = 12, angle = 0),
-        strip.text.y = element_text(size=10, face="bold"),
-        legend.position = "none") +
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 22, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(label=comma, limits = c(0,30000)) +
   #scale_x_continuous(label=comma, limits = c(0,100)) +
   labs(title = "", subtitle = "", caption = "",
