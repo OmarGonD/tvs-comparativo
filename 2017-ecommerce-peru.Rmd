@@ -20,7 +20,6 @@ When you click the **Knit** button a document will be generated that includes bo
 
 library(dplyr)
 library(ggplot2)
-library(ggforce)
 library(hrbrthemes)
 library(scales)
 library(tibble)
@@ -37,6 +36,11 @@ tvs <- source_data("https://www.dropbox.com/s/6arewitgenhwwba/2017-03-15-total-t
 
 ```
 
+
+</br>
+</br>
+
+# TVs por Ecommerce: 2017 vs 2016
 
 
 
@@ -81,9 +85,10 @@ tvs.cantidad$periodo <- factor(tvs.cantidad$periodo, levels = c(2017,2016),
 
 
 
-
-tt1 <- "Ecommerce con más TVs"
-stt1 <- "Linio, Ripley y Falabella son los 3 principales ecommerce del Perú.\n"
+tt1 <- ""
+stt1 <- ""
+# tt1 <- "Ecommerce con más TVs"
+# stt1 <- "Linio, Ripley y Falabella son los 3 principales ecommerce del Perú.\n"
 cptn <- "\nogonzales.com | Data Analyst"
 
 
@@ -129,15 +134,9 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
 </br>
 </br>
 
-## Cantidad de TVs según rango de precio
-
-You can also embed plots, for example:
-
-</br>
-</br>
 
 
-## 2017 vs 2016: TVS  por Rango de Precio
+# 2017 vs 2016: TVS  por Rango de Precio
 
 
 ```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
@@ -234,7 +233,8 @@ ggplotly(ggplot(tvs.rango, aes(x = rango, y = cantidad, fill = ecommerce)) +
 </br>
 
 
-## BOXPLOTS TVS 2017 vs 2016 todos los Ecommerce
+# Distribución de precios por ecommerce
+
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
@@ -259,9 +259,7 @@ tvs.precios$periodo <- factor(tvs.precios$periodo, levels = c(2017,2016),
 
 
 
-tvs.precios$ecommerce <- factor(tvs.precios$ecommerce, levels = c("linio",
-                                                                  "ripley",
-                                                                  "falabella"),
+tvs.precios$ecommerce <- factor(tvs.precios$ecommerce, levels = rev(c("linio","ripley","falabella")),
                                 ordered = T)
 
 
@@ -273,7 +271,7 @@ tvs.precios$ecommerce <- factor(tvs.precios$ecommerce, levels = c("linio",
 ### Distribución de los precios de TVs por Ecommerce
 
 
-p <- plot_ly(tvs.precios, x = ~periodo, y = ~precio.actual, color = ~ecommerce, type = "box") %>%
+p <- plot_ly(tvs.precios, x = ~periodo, y = ~precio.actual, color = ~ecommerce,colors = c("#BED800", "#802D69", "#FF5500"), type = "box") %>%
   layout(boxmode = "group")
 
 p
@@ -286,7 +284,7 @@ p
 ```
 
 
-Holaaaaaa
+# Variedad de marcas de TV según rango de precios
 
 
 
@@ -702,7 +700,14 @@ precio.actual.linio.parte1 <- plot_ly(tvs.linio.parte1, x = ~periodo, y = ~preci
 precio.actual.linio.parte1
 
 
+```
 
+</br>
+</br>
+</br>
+</br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 
 precio.actual.linio.parte2 <- plot_ly(tvs.linio.parte2, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
