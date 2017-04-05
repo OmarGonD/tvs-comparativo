@@ -15,10 +15,13 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars, echo=FALSE, message=FALSE, warning=FALSE}
+```{r tvs, echo=FALSE, message=FALSE, warning=FALSE}
+
+
 library(dplyr)
 library(ggplot2)
 library(ggforce)
+library(hrbrthemes)
 library(scales)
 library(tibble)
 library(plotly)
@@ -26,12 +29,18 @@ library(repmis)
 
 
 
-setwd("D:\\RCoursera\\r-s-l")
 
 
 
 tvs <- source_data("https://www.dropbox.com/s/6arewitgenhwwba/2017-03-15-total-tvs.csv?raw=1")
 
+
+```
+
+
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 
 ############################################
@@ -45,8 +54,7 @@ tvs <- source_data("https://www.dropbox.com/s/6arewitgenhwwba/2017-03-15-total-t
 
 
 tvs <- tvs %>%
-  filter(marca != is.na(marca),
-         pulgadas < 100 | pulgadas != is.na(pulgadas))
+       filter(pulgadas < 90, !is.na(marca))
 
 
 
@@ -75,7 +83,7 @@ tvs.cantidad$periodo <- factor(tvs.cantidad$periodo, levels = c(2017,2016),
 
 
 tt1 <- "Ecommerce con más TVs"
-stt1 <- "Linio, Ripley y Saga Falabella (Falabella) son los 3 principales ecommerce del Perú.\n"
+stt1 <- "Linio, Ripley y Falabella son los 3 principales ecommerce del Perú.\n"
 cptn <- "\nogonzales.com | Data Analyst"
 
 
@@ -90,19 +98,29 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
   labs(title = "Ecommerce con más TVs\n",
        x = "", y = "") +
   #theme_ipsum_rc(grid = "Y") +
-  theme(axis.text.x = element_text(colour="grey10",size=20,hjust=.5,vjust=.5,face="plain"),
-        axis.text.y = element_text(colour="grey10",size=14,hjust=0,vjust=0,face="plain"),  
+  theme(axis.text.x = element_text(colour="grey10",size=12,hjust=.5,vjust=.5,face="plain"),
+        axis.text.y = element_text(colour="grey10",size=8,hjust=0,vjust=0,face="plain"),  
         axis.title.x = element_text(colour="grey40",size=6,angle=0,hjust=.5,vjust=0,face="plain"),
         axis.title.y = element_text(colour="grey40",size=6,angle=90,hjust=.5,vjust=.5,face="plain"),
         plot.title = element_text(size = 24,vjust=2,face="bold"),
         plot.subtitle = element_text(vjust=2, size = 16),
-        plot.caption = element_text(vjust=2, size = 16),
+        plot.caption = element_text(vjust=2, size = 8),
+        panel.border = element_rect(colour = "white"),
         legend.position = "none",
-        strip.text = element_text(size = 22, hjust = 0.08, vjust = -0.5)) +
-  geom_text(aes(label=cantidad), vjust=-0.25, size = 6) +
+        strip.text = element_text(size = 18, hjust = 0.08, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
+  geom_text(aes(label=cantidad), vjust=-0.6, size = 4) +
   ylim(0, 600) +
   labs(title = tt1, subtitle = stt1, caption = cptn,
        x = "", y = "") 
+
+
+
+
+
+
 
 
 
@@ -115,8 +133,14 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
+</br>
+</br>
 
+
+## 2017 vs 2016: TVS  por Rango de Precio
+
+
+```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
 
 
 ############################################
@@ -179,18 +203,19 @@ ggplotly(ggplot(tvs.rango, aes(x = rango, y = cantidad, fill = ecommerce)) +
            theme_bw() +
            coord_flip() +
            #theme_ipsum_rc(grid = "X") +
-           theme(axis.text.x = element_text(colour="grey10",size=12,hjust=.5,vjust=.5,face="plain"),
-                 axis.text.y = element_text(colour="grey10",size=14,,hjust=1,vjust=0,face="plain"),  
+           theme(axis.text.x = element_text(colour="grey10",size=10,hjust=.5,vjust=.5,face="plain"),
+                 axis.text.y = element_text(colour="grey10",size=10,hjust=1,vjust=0,face="plain"),  
                  axis.title.x = element_text(colour="grey40",size=16,angle=0,hjust=.5,vjust=0,face="plain"),
                  axis.title.y = element_text(colour="grey40",size=16,angle=90,hjust=.5,vjust=.5,face="plain"),
                  plot.title = element_text(size = 24,vjust=4, face="bold"),
                  plot.subtitle = element_text(vjust=2, size = 16),
                  plot.caption = element_text(vjust=2, size = 16),
-                 legend.title = element_text(colour="grey40", size=16, face="bold"),
-                 legend.text = element_text(colour="grey10", size=16, face="bold"),
-                 #strip.text.x = element_text(size = 14, angle = 0),
-                 legend.position = "top",
-                 strip.text = element_text(size = 22, hjust = 0.06, vjust = -.5)) +
+                 panel.border = element_rect(colour = "white"),
+                 legend.position = "none",
+                 strip.text = element_text(size = 18, hjust = 0.01, vjust = -0.5),
+                 strip.background = element_rect(colour = "white", fill = "white"),
+                 panel.grid.major.y = element_blank(),
+                 panel.grid.minor.y = element_blank()) +
            #geom_text(aes(label=cantidad), hjust=-0.25, size = 4) +
            ylim(0, 300) +
            labs(title = tt2, subtitle = stt2, caption = cptn,
@@ -200,23 +225,30 @@ ggplotly(ggplot(tvs.rango, aes(x = rango, y = cantidad, fill = ecommerce)) +
 
 
 
+
+
 ```
+
+
+</br>
+</br>
+
+
+## BOXPLOTS TVS 2017 vs 2016 todos los Ecommerce
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
-</br>
+
 
 ```{r boxplot-precio-ecommerce, echo=FALSE, message=FALSE, warning=FALSE}
 
-###################################################
-# BOXPLOTS TVS 2017 vs 2016 todos los Ecommerce ###
-###################################################
 
 
 
 
 tvs.precios <- tvs  
+
 
 
 
@@ -238,13 +270,16 @@ tvs.precios$ecommerce <- factor(tvs.precios$ecommerce, levels = c("linio",
 
 
 
-
+### Distribución de los precios de TVs por Ecommerce
 
 
 p <- plot_ly(tvs.precios, x = ~periodo, y = ~precio.actual, color = ~ecommerce, type = "box") %>%
-  layout(boxmode = "group", title = "Distribución de los precios de TVs por Ecommerce")
+  layout(boxmode = "group")
 
 p
+
+
+
 
 
 
@@ -280,12 +315,44 @@ tvs.linio <- tvs[tvs$ecommerce == "linio",]
 
 
 
+tvs.linio.parte1 <- tvs.linio %>%
+                    filter(marca %in% c("lg", "aoc","imaco",
+                                        "royal","panasonic",
+                                        "samsung", "sony", "olitec",
+                                        "haier", "nex"))
+
+
+
+
+tvs.linio.parte2 <- tvs.linio %>%
+                    filter(marca %in% c("daywoo","altron","blackline",
+                                        "miray","hisense", "king master",
+                                        "xenon", "hyundai", "jvc"))
+                  
+                  
+
+
+
+
+
+
+
 #########################################################
 ### MARCAS DE TV POR RANGO DE PRECIO - EN PORCENTAJES ###
 #########################################################
 
 
 
+```
+
+</br>
+</br>
+
+## Ripley
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 ### Ripley
 
@@ -295,7 +362,7 @@ tvs.ripley.tvs.por.rango <- tvs.ripley  %>%
                             group_by(periodo, rango, marca) %>%
                             summarise(cantidad.marca = length(marca)) %>% 
                             #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
-                            mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),2))
+                            mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),4))
 
 
 
@@ -324,7 +391,8 @@ tvs.ripley.tvs.por.rango$rango <- factor(tvs.ripley.tvs.por.rango$rango, levels 
 
 
 
-tt3 <- "Ripley.com.pe \nmarcas de tvs por rango de precio en porcentajes %"
+#tt3 <- "Ripley.com.pe \nmarcas de tvs por rango de precio en porcentajes %"
+tt3 <- ""
 stt3 <- "\n"
 
 
@@ -343,11 +411,12 @@ ggplot(tvs.ripley.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
         plot.title = element_text(vjust=2, size = 24,face="bold"),
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
-        legend.position = "top",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=18),
-        strip.text = element_text(size = 22, hjust = 0.05, vjust = 2, face = "bold")) +
+        legend.position = "bottom",
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 18, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(labels=percent) +
   # scale_fill_manual(
   #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
@@ -355,16 +424,19 @@ ggplot(tvs.ripley.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
   #              "aoc" = "#9DCC27", "sharp" = "#BEBBDA", "hyundai" = "#FCB442")) +
   # labs(title = tt5, subtitle = stt5, caption = cptn,
   #      x = "", y = "") +
-  labs(title = tt3, subtitle = stt3, caption = cptn,
+  labs(title = tt3, subtitle = stt3, caption = "",
        x = "", y = "")
-
-
 
 ```
 
 
 
+
+## Falabella
+
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
 
 ### Falabella
 
@@ -374,7 +446,7 @@ tvs.falabella.tvs.por.rango <- tvs.falabella  %>%
   group_by(periodo, rango, marca) %>%
   summarise(cantidad.marca = length(marca)) %>% 
   #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
-  mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),2))
+  mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),4))
 
 
 
@@ -395,7 +467,9 @@ tvs.falabella.tvs.por.rango$rango <- factor(tvs.falabella.tvs.por.rango$rango, l
 
 
 
-tt5 <- "Sagafalabella \n % marcas de tvs por rango de precios"
+##tt5 <- "Sagafalabella \n % marcas de tvs por rango de precios"
+
+tt5 <- ""
 stt5 <- "\n"
 
 
@@ -412,11 +486,12 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
         plot.title = element_text(vjust=2, size = 24,face="bold"),
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
-        legend.position = "top",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=18),
-        strip.text = element_text(size = 22, hjust = 0.05, vjust = -.5, face = "bold")) +
+        legend.position = "bottom",
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 18, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(labels=percent) +
   # scale_fill_manual(
   #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
@@ -424,8 +499,12 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
   #              "aoc" = "#9DCC27", "sharp" = "#BEBBDA", "hyundai" = "#FCB442")) +
   # labs(title = tt5, subtitle = stt5, caption = cptn,
   #      x = "", y = "") +
-  labs(title = tt5, subtitle = stt5, caption = cptn,
+  labs(title = tt5, subtitle = stt5, caption = "",
        x = "", y = "") 
+
+
+
+
 
 
 ```
@@ -436,15 +515,14 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-### Linio
 
 
 
 tvs.linio.tvs.por.rango <- tvs.linio  %>%
-                            group_by(periodo, rango, marca) %>%
-                            summarise(cantidad.marca = length(marca)) %>% 
-                            #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
-                            mutate(porcentaje_tvs = cantidad.marca/sum(cantidad.marca))
+  group_by(periodo, rango, marca) %>%
+  summarise(cantidad.marca = length(marca)) %>% 
+  #mutate(porcentaje = paste0(round(cantidad.marca/sum(cantidad.marca)*100,2),'%'))
+  mutate(porcentaje_tvs = round(cantidad.marca/sum(cantidad.marca),4))
 
 
 
@@ -470,7 +548,9 @@ tvs.linio.tvs.por.rango$rango <- factor(tvs.linio.tvs.por.rango$rango, levels = 
 
 
 
-tt5 <- "Linio \n % marcas de tvs por rango de precios"
+#tt5 <- "Linio \n % marcas de tvs por rango de precios"
+tt5 <- ""
+
 stt5 <- "\n"
 
 
@@ -487,11 +567,12 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
         plot.title = element_text(vjust=2, size = 24,face="bold"),
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
-        legend.position = "top",
-        legend.box = "horizontal",
-        legend.title=element_blank(),
-        legend.text=element_text(size=18),
-        strip.text = element_text(size = 22, hjust = 0.05, vjust = -.5, face = "bold")) +
+        legend.position = "bottom",
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 18, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_y_continuous(labels=percent) +
   # scale_fill_manual(
   #   values = c("hisense" = "#F39EF7","sony" = "#003366","panasonic" = "#FCB462",
@@ -499,47 +580,73 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
   #              "aoc" = "#9DCC27", "sharp" = "#BEBBDA", "hyundai" = "#FCB442")) +
   # labs(title = tt5, subtitle = stt5, caption = cptn,
   #      x = "", y = "") +
-  labs(title = tt5, subtitle = stt5, caption = cptn,
+  labs(title = tt5, subtitle = stt5, caption = "",
        x = "", y = "") 
+
+
+
+
 
 
 ```
 
 
-## Interactivo Diferencia porcentual
+# Precio actual por marca de TV
+
+
+</br>
+</br>
+
+
+## Ripley: distribución de los precios de TVs por marca
+
+
+</br>
+</br>
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 
-###############################################
-######### Precio Actual por Marca #############
-###############################################
-
 tvs.ripley$periodo <- factor(tvs.ripley$periodo, levels = c(2017,2016),
                             ordered = T)
 
+
+
+### Ripley: distribución de los precios de TVs por marca
+
+
+precio.actual.ripley <- plot_ly(tvs.ripley, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
+  layout(boxmode = "group")
+
+precio.actual.ripley
+
+
+```
+
+
+</br>
+</br>
+
+## Falabella: distribución de los precios de TVs por marca
+
+</br>
+</br>
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 tvs.falabella$periodo <- factor(tvs.falabella$periodo, levels = c(2017,2016),
                             ordered = T)
 
 
-tvs.linio$periodo <- factor(tvs.linio$periodo, levels = c(2017,2016),
-                                          ordered = T)
 
 
-
-
-precio.actual.ripley <- plot_ly(tvs.ripley, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
-  layout(boxmode = "group", title = "Ripley: distribución de los precios de TVs por marca")
-
-precio.actual.ripley
-
-
+### Falabella: distribución de los precios de TVs por marca
 
 
 precio.actual.falabella <- plot_ly(tvs.falabella, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
-  layout(boxmode = "group", title = "Falabella: distribución de los precios de TVs por marca")
+  layout(boxmode = "group")
 
 precio.actual.falabella
 
@@ -547,7 +654,77 @@ precio.actual.falabella
 ```
 
 
-### Pulgadas vs Precio
+</br>
+</br>
+
+## Linio: distribución de los precios de TVs por marca (parte 1 y 2)
+
+</br>
+</br>
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+tvs.linio$periodo <- factor(tvs.linio$periodo, levels = c(2017,2016),
+                                          ordered = T)
+
+
+
+
+tvs.linio.parte1$periodo <- factor(tvs.linio.parte1$periodo, levels = c(2017,2016),
+                            ordered = T)
+
+
+
+tvs.linio.parte2$periodo <- factor(tvs.linio.parte2$periodo, levels = c(2017,2016),
+                                   ordered = T)
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Linio - Precio Actual - Parte 1 y 2
+
+
+
+
+precio.actual.linio.parte1 <- plot_ly(tvs.linio.parte1, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
+  layout(boxmode = "group")
+
+precio.actual.linio.parte1
+
+
+
+
+
+precio.actual.linio.parte2 <- plot_ly(tvs.linio.parte2, x = ~periodo, y = ~precio.actual, color = ~marca, type = "box") %>%
+  layout(boxmode = "group")
+
+precio.actual.linio.parte2
+
+
+
+
+```
+
+</br>
+</br>
+
+
+## Pulgadas vs Precio
+
+Scaterplot que muestra la tendencia entre pulgadas vs precio. 
+
+</br>
+</br>
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -575,26 +752,32 @@ tv.pulgadas.vs.pulgadas$marca <- as.factor(tv.pulgadas.vs.pulgadas$marca)
 pulgadas_precio <- ggplot(tv.pulgadas.vs.pulgadas, aes(x = pulgadas, y = precio.actual)) + 
   geom_point(aes(color=marca),size = 2,alpha = 0.4) +
   facet_grid(ecommerce ~ periodo, switch = "y") +
-  #theme_ipsum_rc(grid = "Y") +
+  theme_bw() +
   theme(axis.text.x = element_text(colour="grey10",size=10,hjust=.5,vjust=.5,face="plain"),
         axis.text.y=element_blank(),axis.ticks=element_blank(),  
-        axis.title.x = element_text(colour="grey40",size=16,angle=0,hjust=.5,vjust=0,face="plain"),
-        axis.title.y = element_text(colour="grey40",size=16,angle=90,hjust=.5,vjust=.5,face="plain"),
+        axis.title.x = element_text(colour="grey40",size=12,angle=0,hjust=.5,vjust=0,face="plain"),
+        axis.title.y = element_text(colour="grey40",size=12,angle=90,hjust=.5,vjust=.5,face="plain"),
+        legend.position = "none",
         plot.title = element_text(size = 24,vjust=4, face="bold"),
         plot.subtitle = element_text(vjust=2, size = 8),
         plot.caption = element_text(vjust=2, size = 8),
         legend.title = element_text(colour="grey40",size=14,hjust=.5,vjust=.5,face="bold"),
         legend.text = element_text(colour="grey10", size=18, face="plain"),
-        strip.text.x = element_text(size = 12, angle = 0),
-        strip.text.y = element_text(size=10, face="bold"),
-        legend.position = "none") +
-  scale_y_continuous(label=comma, limits = c(0,30000)) +
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 12, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
+  scale_y_continuous(label=comma, limits = c(0,36000)) +
   #scale_x_continuous(label=comma, limits = c(0,100)) +
   labs(title = "", subtitle = "", caption = "",
        x = "pulgadas \n", y = "Precio en S/.")
 
 
 ggplotly(pulgadas_precio)
+
+
+
 
 
 

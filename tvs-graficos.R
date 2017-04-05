@@ -74,7 +74,7 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
   labs(title = "Ecommerce con más TVs\n",
        x = "", y = "") +
   #theme_ipsum_rc(grid = "Y") +
-  theme(axis.text.x = element_text(colour="grey10",size=16,hjust=.5,vjust=.5,face="plain"),
+  theme(axis.text.x = element_text(colour="grey10",size=12,hjust=.5,vjust=.5,face="plain"),
         axis.text.y = element_text(colour="grey10",size=8,hjust=0,vjust=0,face="plain"),  
         axis.title.x = element_text(colour="grey40",size=6,angle=0,hjust=.5,vjust=0,face="plain"),
         axis.title.y = element_text(colour="grey40",size=6,angle=90,hjust=.5,vjust=.5,face="plain"),
@@ -337,7 +337,7 @@ ggplot(tvs.ripley.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
         plot.title = element_text(vjust=2, size = 24,face="bold"),
         plot.subtitle = element_text(vjust=2, size = 16),
         plot.caption = element_text(vjust=2, size = 16),
-        legend.position = "top",
+        legend.position = "bottom",
         panel.border = element_rect(colour = "white"),
         strip.text = element_text(size = 18, hjust = 0.05, vjust = -0.5),
         strip.background = element_rect(colour = "white", fill = "white"),
