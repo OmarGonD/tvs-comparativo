@@ -9,11 +9,32 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Principales Ecommerce del Perú - Análisis descriptivo
+# Principales Ecommerce del Perú - Análisis descriptivo
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+La idea de realizar esta investigación fue conocer las estrategias de los principales ecommerece peruanos basados en los productos que ofrecen en sus respectivos sitios web. 
+
+
+Como menciona el título, esta es una investigación descriptiva. Lo que queremos es mostrar los datos que encontramos e inferir algunos comentarios que se pueden observar. No es el objetivo de esta entrada analizar a profundidad el por qué de cada una de las estrategias de marketing de cada empresa; por el contrario, mencionaremos algunos datos resaltantes que se observan al tener la información de empresas de un mismos sector, que a su vez son competencias entre sí. 
+
+Para este análisis se utilizó el lenguaje de programación "R" para extraer los datos de cada uno de los ecommerce. El código completo lo encontrarán al final, en caso quisieran reproducir los resultados mostrados en esta entrada. 
+
+*Por ahora, solo colocaré el script para descargar los datos desde DropBox, y generar todos los gráficos. Los scripts para extraer la data directamente de los ecommerce los colocaré en las próximas semanas.
+
+
+
+
+[Linio](https://www.linio.com.pe/c/tv-y-video/televisores "Linio TVs")
+
+[Falabella](http://www.falabella.com.pe/falabella-pe/category/cat1450502/Smart-TV?navAction=push "Falabella TVs")
+
+
+[Ripley](http://www.ripley.com.pe/ripley-peru/tv-todas "Ripley TVs")
+
+
+</br>
+</br>
+
 
 ```{r tvs, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -40,7 +61,7 @@ tvs <- source_data("https://www.dropbox.com/s/6arewitgenhwwba/2017-03-15-total-t
 </br>
 </br>
 
-# TVs por Ecommerce: 2017 vs 2016
+## TVs por Ecommerce
 
 
 
@@ -136,7 +157,7 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
 
 
 
-# 2017 vs 2016: TVS  por Rango de Precio
+## TVs por Rango de Precio
 
 
 ```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
@@ -233,7 +254,7 @@ ggplotly(ggplot(tvs.rango, aes(x = rango, y = cantidad, fill = ecommerce)) +
 </br>
 
 
-# Distribución de precios por ecommerce
+## Distribución de precios por ecommerce
 
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -284,7 +305,7 @@ p
 ```
 
 
-# Variedad de marcas de TV según rango de precios
+## Variedad de marcas de TV según rango de precios
 
 
 
@@ -346,7 +367,7 @@ tvs.linio.parte2 <- tvs.linio %>%
 </br>
 </br>
 
-## Ripley
+### Ripley
 
 
 
@@ -430,7 +451,7 @@ ggplot(tvs.ripley.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 
 
 
-## Falabella
+### Falabella
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -508,7 +529,7 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
 ```
 
 
-# Linio 
+### Linio 
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -589,14 +610,14 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 ```
 
 
-# Precio actual por marca de TV
+## Precio actual por marca de TV
 
 
 </br>
 </br>
 
 
-## Ripley: distribución de los precios de TVs por marca
+### Ripley: distribución de precios por marca
 
 
 </br>
@@ -626,7 +647,7 @@ precio.actual.ripley
 </br>
 </br>
 
-## Falabella: distribución de los precios de TVs por marca
+### Falabella: distribución de precios por marca
 
 </br>
 </br>
@@ -655,7 +676,7 @@ precio.actual.falabella
 </br>
 </br>
 
-## Linio: distribución de los precios de TVs por marca (parte 1 y 2)
+### Linio: distribución de precios por marca (parte 1 y 2)
 
 </br>
 </br>
