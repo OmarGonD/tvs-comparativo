@@ -1,28 +1,57 @@
 ---
-title: "2017 Ecommerce Perú"
+title: "Ecommerce Perú: análisis de la sección televisores de los 3 ecommerce más importantes del país al 2017"
 author: "omar gonzáles díaz"
 date: "30 de marzo de 2017"
-output: html_document
+output: 
+  html_document:
+    includes:
+      in_header: ../header.html
+      before_body: ../doc_prefix.html
+      after_body: ../after_body.html
+    code_folding: hide
+    
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+</br>
+</br>
+</br>
+
+
 # Principales Ecommerce del Perú - Análisis descriptivo
 
 
-La idea de realizar esta investigación fue conocer las estrategias de los principales ecommerece peruanos basados en los productos que ofrecen en sus respectivos sitios web. 
+</br>
+</br>
 
 
-Como menciona el título, esta es una investigación descriptiva. Lo que queremos es mostrar los datos que encontramos e inferir algunos comentarios que se pueden observar. No es el objetivo de esta entrada analizar a profundidad el por qué de cada una de las estrategias de marketing de cada empresa; por el contrario, mencionaremos algunos datos resaltantes que se observan al tener la información de empresas de un mismos sector, que a su vez son competencias entre sí. 
+La idea de realizar esta investigación fue conocer las estrategias de los principales ecommerece peruanos a través de los productos que ofrecen en sus respectivos sitios web. 
+
+
+Esta es una investigación descriptiva. Lo que queremos es mostrar los datos que encontramos e inferir algunos comentarios que se pueden observar. No es el objetivo de esta entrada analizar a profundidad el por qué de cada una de las estrategias de marketing de cada empresa; por el contrario, mencionaremos algunos datos resaltantes que se observan en los 3 ecommerce más importantes del país: Linio, Ripley y Falabella.
 
 Para este análisis se utilizó el lenguaje de programación "R" para extraer los datos de cada uno de los ecommerce. El código completo lo encontrarán al final, en caso quisieran reproducir los resultados mostrados en esta entrada. 
 
-*Por ahora, solo colocaré el script para descargar los datos desde DropBox, y generar todos los gráficos. Los scripts para extraer la data directamente de los ecommerce los colocaré en las próximas semanas.
 
 
+</br>
+</br>
 
+## Sobre los datos
+
+</br>
+</br>
+
+Para obtener los datos ingresamos a las sección de televisores de los 3 ecommerce estudiados. Toda página web tiene una estructura HTML que debe respestar, y con la cuál debe ser consistente. Aprovechando estas 2 características es que podemos programar scripts que, en base a la estructura de cada Ecommerce recoja los siguientes datos de cada uno de los televisores publicitados: a) Marca, b) Nombre del producto, c) Precio actual y d) Precio antes.
+
+Para este proposito se utilizó el paquete [RSelenium](https://cran.r-project.org/web/packages/RSelenium/index.html). Este paquete utiliza el web drive [Selenium 2.0](https://seleniumhq.github.io/docs/wd.html) para automatizar la navegación en un navegador web como Chrome o Firefox.
+
+
+**Estos son los enlaces a las secciones de televisores de cada uno de los ecommerce estudiados:**
 
 [Linio](https://www.linio.com.pe/c/tv-y-video/televisores "Linio TVs")
 
@@ -30,6 +59,10 @@ Para este análisis se utilizó el lenguaje de programación "R" para extraer los d
 
 
 [Ripley](http://www.ripley.com.pe/ripley-peru/tv-todas "Ripley TVs")
+
+
+
+*Por ahora, solo colocaré el script para descargar los datos desde DropBox, y generar todos los gráficos. Los scripts para extraer la data directamente de los ecommerce los colocaré en las próximas semanas.
 
 
 </br>
@@ -58,14 +91,26 @@ tvs <- source_data("https://www.dropbox.com/s/6arewitgenhwwba/2017-03-15-total-t
 ```
 
 
-</br>
-</br>
 
 ## TVs por Ecommerce
 
+</br>
+
+#### Ripley duplicó la cantidad de Tvs que ofrece en su sitio web.
+
+</br>
+</br>
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+Observamos que la tendencia entre los 3 ecommerce es la misma que el año 2016: Linio es el ecommerce con más televisores, seguido por Ripley, y finalmente Falabella. Los 3 ecommerce incrementaron la cantidad de TVs ofertadas este 2017, siendo Linio el ecommerce que incrementó más esta cantidad (+140%).
+
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+
+library(knitr)
+library(formattable)
 
 
 ############################################
@@ -84,10 +129,26 @@ tvs <- tvs %>%
 
 
 
-
 tvs.cantidad <- tvs  %>%
   group_by(periodo, ecommerce) %>%
   summarise(cantidad = length(marca))
+
+
+
+tvs.cantidad <- tvs.cantidad %>% group_by(ecommerce) %>% 
+  mutate(diferencia.porcentual = (cantidad - lag(cantidad))/lag(cantidad) * 100) %>%
+  mutate(diferencia.porcentual = round(diferencia.porcentual,2)) 
+
+
+tvs.cantidad[is.na(tvs.cantidad)] <- 0
+
+
+
+
+tvs.cantidad <- tvs.cantidad %>%
+                   mutate(diferencia.porcentual = percent(paste0(diferencia.porcentual,"%")))
+
+
 
 
 
@@ -101,8 +162,28 @@ tvs.cantidad$ecommerce <- factor(tvs.cantidad$ecommerce, levels = c("linio",
 
 
 
+
+
+
 tvs.cantidad$periodo <- factor(tvs.cantidad$periodo, levels = c(2017,2016),
                                ordered = T)
+
+
+
+
+
+
+
+```
+
+
+
+
+</br>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+
 
 
 
@@ -156,8 +237,108 @@ ggplot(tvs.cantidad, aes(x=ecommerce, y= cantidad, fill = ecommerce)) +
 </br>
 
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+formattable(tvs.cantidad, list(
+  diferencia.porcentual = color_tile("white", "green3")))
+
+```
+
+
+</br>
+</br>
+</br>
+
+
+## Pulgadas vs Precio
+
+Scaterplot que muestra la tendencia entre pulgadas vs precio. 
+
+</br>
+
+
+**2016:** este año se vio una tendencia clara en los 3 ecommerce, el límite en pulgadas para todos los ecomerce, de cualquier marca, era 65 pulgadas. Solo se observan 4 excepciones, 2 en falabella y 2 en linio; se trata de televisores de 75 pulgadas.
+
+**2017:** si bien aún parece que los 3 ecommerce optan por contar con varios Tvs de 65 pulgada, se observa una mayor oferta de TVs de mayor tamaño, principalmente de 75 y 86 pulgadas.
+
+
+
+</br>
+</br>
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+################################################
+####### Scaterplot Pulgadas vs Precios #########
+################################################
+
+
+
+tv.pulgadas.vs.pulgadas <- tvs %>% 
+     group_by(periodo, ecommerce, marca, pulgadas) %>%
+     filter(pulgadas <= 90, marca != "xenon") 
+
+
+
+
+tv.pulgadas.vs.pulgadas$periodo <- factor(tv.pulgadas.vs.pulgadas$periodo, levels = c(2017,2016), ordered = T)
+
+tv.pulgadas.vs.pulgadas$marca <- as.factor(tv.pulgadas.vs.pulgadas$marca)
+
+
+pulgadas_precio <- ggplot(tv.pulgadas.vs.pulgadas, aes(x = pulgadas, y = precio.actual)) + 
+  geom_point(aes(color=marca),size = 2,alpha = 0.4) +
+  facet_grid(ecommerce ~ periodo, switch = "y") +
+  theme_bw() +
+  theme(axis.text.x = element_text(colour="grey10",size=10,hjust=.5,vjust=.5,face="plain"),
+        axis.text.y=element_blank(),axis.ticks=element_blank(),  
+        axis.title.x = element_text(colour="grey40",size=12,angle=0,hjust=.5,vjust=0,face="plain"),
+        axis.title.y = element_text(colour="grey40",size=12,angle=90,hjust=.5,vjust=.5,face="plain"),
+        legend.position = "none",
+        plot.title = element_text(size = 24,vjust=4, face="bold"),
+        plot.subtitle = element_text(vjust=2, size = 8),
+        plot.caption = element_text(vjust=2, size = 8),
+        legend.title = element_text(colour="grey40",size=14,hjust=.5,vjust=.5,face="bold"),
+        legend.text = element_text(colour="grey10", size=18, face="plain"),
+        panel.border = element_rect(colour = "white"),
+        strip.text = element_text(size = 12, hjust = 0.05, vjust = -0.5),
+        strip.background = element_rect(colour = "white", fill = "white"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
+  scale_y_continuous(label=comma, limits = c(0,36000)) +
+  #scale_x_continuous(label=comma, limits = c(0,100)) +
+  labs(title = "", subtitle = "", caption = "",
+       x = "pulgadas \n", y = "Precio en S/.")
+
+
+ggplotly(pulgadas_precio)
+
+
+
+
+
+
+
+```
+
+</br>
+</br>
+</br>
+</br>
+</br>
 
 ## TVs por Rango de Precio
+
+</br>
+</br>
+
+Es interesante observar que la variedad de televisores ofertados se encuentran entre los S/.500 y S/.1,500 soles. 
+
+También encontramos una buena cantidad de televisores en el rango "> S/.4000".
+
+</br>
+</br>
 
 
 ```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
@@ -256,10 +437,21 @@ ggplotly(ggplot(tvs.rango, aes(x = rango, y = cantidad, fill = ecommerce)) +
 
 ## Distribución de precios por ecommerce
 
+</br>
+</br>
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Si nos fijamos en la distribución de precios, notamos que Linio concentra sus precios entre los S/.890 y S/.2,299, con un promedio de S/.1,469. Existe una gran cantidad de TVs cuyos precios son considerados como _outliers_.
+
+En Ripley sucede algo similar encontramos que los precios se centran entre los S/.1,024 y los S/.3,999, siendo el promedio: S/.1,899. Así como varios televisores con precios considerados como _outliers_.
+
+En Falabella notamos que los precios se encuentran entre los S/.5,999 y los S/.1,699, con un promedio de S/.2,949. 
+
+Nota: en el comparativo con el año pasado, notamos que la cantidad de _outliers_ se ha incrementado notoriamente tanto en Linio como en Ripley. Esto no sucede en Falabella que se mantiene con 3 televisores con precios considerados como _outliers_.
 
 
+</br>
+</br>
 
 
 ```{r boxplot-precio-ecommerce, echo=FALSE, message=FALSE, warning=FALSE}
@@ -304,9 +496,14 @@ p
 
 ```
 
+</br>
+</br>
 
 ## Variedad de marcas de TV según rango de precios
 
+
+</br>
+</br>
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -369,6 +566,9 @@ tvs.linio.parte2 <- tvs.linio %>%
 
 ### Ripley
 
+Se observa, a comparación del 2016, que este año se incrementó la variedad de marcas a escoger en el rango "< S/.500", se incorporó _haier_ y _lg_.
+
+También que en los rangos de precios más elevados _de S/.2,500 a S/.3,500, de S/.3,500 a S/.4,500, y > S/.4,500_ la varidad de marcas a disminuido: el 2017 ya no encontramos productos de las marcas Sharp ni Panasonic en estos rangos.
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -454,6 +654,13 @@ ggplot(tvs.ripley.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 ### Falabella
 
 
+
+Falabella está ofreciendo más televisores de la marca _samsung_ en el rango más alto ("> S/.4,000"). El año pasado era _lg_ la marca que domniba esta categoría.
+
+Este ecommerce no ofrece productos de menos de S/.500 soles.
+
+
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 
@@ -530,6 +737,10 @@ ggplot(tvs.falabella.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca))
 
 
 ### Linio 
+
+Linio es el ecommerce con mayor variedad de marcas en cada uno de los rangos de precios.
+
+Notamos también que Sony y Panasonic son marcas que están presentes en todas las categorias de precios.
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -609,6 +820,9 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 
 ```
 
+</br>
+</br>
+
 
 ## Precio actual por marca de TV
 
@@ -616,8 +830,17 @@ ggplot(tvs.linio.tvs.por.rango, aes(x=rango, y= porcentaje_tvs ,fill=marca)) +
 </br>
 </br>
 
+Estos son las marcas que muestran una gran variedad de precios en los 3 ecommerce: _lg_, _samsung_ y _sony_, esto podría deberse a la variedad de televisores tanto a nivel de tamaño como de tecnología.
+
+
+
+
+</br>
+</br>
+
 
 ### Ripley: distribución de precios por marca
+
 
 
 </br>
@@ -653,6 +876,8 @@ precio.actual.ripley
 </br>
 
 
+
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 tvs.falabella$periodo <- factor(tvs.falabella$periodo, levels = c(2017,2016),
@@ -676,11 +901,14 @@ precio.actual.falabella
 </br>
 </br>
 
+
+
 ### Linio: distribución de precios por marca (parte 1 y 2)
 
 </br>
 </br>
-
+</br>
+</br>
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -743,64 +971,23 @@ precio.actual.linio.parte2
 
 </br>
 </br>
-
-
-## Pulgadas vs Precio
-
-Scaterplot que muestra la tendencia entre pulgadas vs precio. 
-
 </br>
 </br>
 
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-
-################################################
-####### Scaterplot Pulgadas vs Precios #########
-################################################
+#Conclusiones:
 
 
+Me resultó muy interesante el 2016, y lo volví a confirmar este 2017, la perspectiva de negocio de Linio. Este ecommerce, nacido netamente en el espacio digital es el que más variedad de productos ofrece. 
 
 
-
-tv.pulgadas.vs.pulgadas <- tvs %>% 
-     group_by(periodo, ecommerce, marca, pulgadas) %>%
-     filter(pulgadas <= 90, marca != "xenon") 
+Este proyecto me permitió trabajar ciertas técnicas de extracción de datos. Me pareció súper interesante la cantidad de datos que están disponibles en la web, de los cuáles podemos obtener información valiosa con las herramientas adecuadas. Lograrlo costó un poco, pero con los librerías de `R` esta tarea se facilitó mucho; especialmente con `RSelenium`, `Gggplot2` y `Plotly`. 
 
 
+Por otro lado Ripley y Falabella tienen un set de televisores a ofertar, es como si aún en un ecommerce cuidaran el _m^2_ digital.  
 
+Agradezco sus comentarios y sugerencias,
 
-tv.pulgadas.vs.pulgadas$periodo <- factor(tv.pulgadas.vs.pulgadas$periodo, levels = c(2017,2016), ordered = T)
-
-tv.pulgadas.vs.pulgadas$marca <- as.factor(tv.pulgadas.vs.pulgadas$marca)
-
-
-pulgadas_precio <- ggplot(tv.pulgadas.vs.pulgadas, aes(x = pulgadas, y = precio.actual)) + 
-  geom_point(aes(color=marca),size = 2,alpha = 0.4) +
-  facet_grid(ecommerce ~ periodo, switch = "y") +
-  theme_bw() +
-  theme(axis.text.x = element_text(colour="grey10",size=10,hjust=.5,vjust=.5,face="plain"),
-        axis.text.y=element_blank(),axis.ticks=element_blank(),  
-        axis.title.x = element_text(colour="grey40",size=12,angle=0,hjust=.5,vjust=0,face="plain"),
-        axis.title.y = element_text(colour="grey40",size=12,angle=90,hjust=.5,vjust=.5,face="plain"),
-        legend.position = "none",
-        plot.title = element_text(size = 24,vjust=4, face="bold"),
-        plot.subtitle = element_text(vjust=2, size = 8),
-        plot.caption = element_text(vjust=2, size = 8),
-        legend.title = element_text(colour="grey40",size=14,hjust=.5,vjust=.5,face="bold"),
-        legend.text = element_text(colour="grey10", size=18, face="plain"),
-        panel.border = element_rect(colour = "white"),
-        strip.text = element_text(size = 12, hjust = 0.05, vjust = -0.5),
-        strip.background = element_rect(colour = "white", fill = "white"),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank()) +
-  scale_y_continuous(label=comma, limits = c(0,36000)) +
-  #scale_x_continuous(label=comma, limits = c(0,100)) +
-  labs(title = "", subtitle = "", caption = "",
-       x = "pulgadas \n", y = "Precio en S/.")
-
-
-ggplotly(pulgadas_precio)
+Omar G.
 
 
 
@@ -808,5 +995,4 @@ ggplotly(pulgadas_precio)
 
 
 
-```
 
