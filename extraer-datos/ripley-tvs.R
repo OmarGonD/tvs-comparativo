@@ -4,12 +4,15 @@ library(dplyr)
 
 
 #setwd("D:\\RCoursera\\Ripley")
-setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
+#setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
+setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+
+
 
 #start RSelenium
 
 
-rD  <- rsDriver(port = 4532L, browser = "firefox", version = "latest", chromever = "latest",
+rD  <- rsDriver(port = 4534L, browser = "firefox", version = "latest", chromever = "latest",
                 geckover = "latest", iedrver = NULL, phantomver = "2.1.1",
                 verbose = TRUE, check = TRUE)
 
@@ -17,6 +20,9 @@ rD  <- rsDriver(port = 4532L, browser = "firefox", version = "latest", chromever
 
 remDr <- rD[["client"]]
 
+
+
+#### URLS ######
 
 
 
@@ -34,7 +40,54 @@ ripley_tvs_urls <- c("http://www.ripley.com.pe/ripley-peru/tv-todas",
 
 
 
+
+ripley_computo_urls <- c("http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=1",
+                         "http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=2",
+                         "http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=3",
+                         "http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=4",
+                         "http://simple.ripley.com.pe/computo/2-en-1-convertibles/laptops-2-en-1",
+                         "http://simple.ripley.com.pe/computo/computadoras/pc-all-in-one",
+                         "http://simple.ripley.com.pe/computo/zona-gamer/laptops-gamer",
+                         "http://simple.ripley.com.pe/computo/tablets-phablets-y-accesorios/tablets-y-phablets?page=1",
+                         "http://simple.ripley.com.pe/computo/tablets-phablets-y-accesorios/tablets-y-phablets?page=2",
+                         "http://simple.ripley.com.pe/computo/tablets-phablets-y-accesorios/tablets-y-phablets?page=3",
+                         "http://simple.ripley.com.pe/computo/tablets-phablets-y-accesorios/estuches-y-fundas",
+                         "http://simple.ripley.com.pe/computo/impresoras-y-tintas/todo-impresoras?page=1",
+                         "http://simple.ripley.com.pe/computo/impresoras-y-tintas/todo-impresoras?page=2",
+                         "http://simple.ripley.com.pe/computo/impresoras-y-tintas/multifuncionales",
+                         "http://simple.ripley.com.pe/computo/impresoras-y-tintas/toners-y-tintas?page=1",
+                         "http://simple.ripley.com.pe/computo/impresoras-y-tintas/toners-y-tintas?page=2",
+                         "http://simple.ripley.com.pe/computo/accesorios-y-software/mouse-teclados-y-parlantes?page=1",
+                         "http://simple.ripley.com.pe/computo/accesorios-y-software/mouse-teclados-y-parlantes?page=2",
+                         "http://simple.ripley.com.pe/computo/accesorios-y-software/estuches-y-maletines?page=1",
+                         "http://simple.ripley.com.pe/computo/accesorios-y-software/estuches-y-maletines?page=2",
+                         "http://simple.ripley.com.pe/computo/accesorios-y-software/cargadores-cables-y-otros",
+                         "http://simple.ripley.com.pe/computo/accesorios-y-software/software-y-antivirus",
+                         "http://simple.ripley.com.pe/computo/almacenamiento/memorias-usb",
+                         "http://simple.ripley.com.pe/computo/almacenamiento/discos-duros?page=1",
+                         "http://simple.ripley.com.pe/computo/almacenamiento/discos-duros?page=2",
+                         "http://simple.ripley.com.pe/computo/almacenamiento/pendrives",
+                         "http://simple.ripley.com.pe/computo/proyectores-y-monitores/proyectores",
+                         "http://simple.ripley.com.pe/computo/proyectores-y-monitores/monitores?page=1",
+                         "http://simple.ripley.com.pe/computo/proyectores-y-monitores/monitores?page=2"
+)
+
+
+
+
+#### Data Lists #####
+
+
+
 ripley_tvs_data_list <- list()
+
+ripley_computo_data_list <- list()
+
+
+
+#### Extracción de datos ####
+
+
 
 
 for (i in ripley_tvs_urls) {
@@ -104,46 +157,14 @@ rownames(ripley_tvs) <- NULL
 
 
 ###################################################
-#### LAPTOPS #################
-
-
-library(RSelenium)
-library(rvest)
-library(dplyr)
-
-
-#setwd("D:\\RCoursera\\Ripley")
-setwd("D:\\rls\\pcs-comparativo\\extraer-datos")
-
-#start RSelenium
-
-
-rD  <- rsDriver(port = 4532L, browser = "firefox", version = "latest", chromever = "latest",
-                geckover = "latest", iedrver = NULL, phantomver = "2.1.1",
-                verbose = TRUE, check = TRUE)
-
-
-
-remDr <- rD[["client"]]
-
-
-
-
-ripley_pcs_urls <- c("http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=1",
-                     "http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=2",
-                     "http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=3",
-                     "http://simple.ripley.com.pe/computo/laptops/todas-las-laptops?page=4")
+#### Computo #################
 
 
 
 
 
 
-
-ripley_pcs_data_list <- list()
-
-
-for (i in ripley_pcs_urls) {
+for (i in ripley_computo_urls) {
   
   remDr$navigate(i)
   
@@ -164,7 +185,7 @@ for (i in ripley_pcs_urls) {
     
     data.frame(
       fecha = as.character(Sys.Date()),
-      categoria = "televisores",
+      categoria = "computo",
       ecommerce = "ripley",
       producto = r.producto,
       precio.antes = ifelse(length(r.precio.antes)==0, NA, r.precio.antes),
@@ -187,11 +208,11 @@ for (i in ripley_pcs_urls) {
   
   
   
-  pcs <- lapply(doc, product_info) %>%
+  computo <- lapply(doc, product_info) %>%
     bind_rows()
   
   
-  ripley_pcs_data_list[[i]] <- pcs # add it to your list
+  ripley_computo_data_list[[i]] <- computo # add it to your list
   
   
   
@@ -200,25 +221,29 @@ for (i in ripley_pcs_urls) {
 
 
 
-ripley_pcs = do.call(rbind, ripley_pcs_data_list)
+ripley_computo = do.call(rbind, ripley_computo_data_list)
 
 
-#ripley_pcs <- cbind(fecha = as.character(Sys.Date()), ripley_pcs)
+#ripley_computo <- cbind(fecha = as.character(Sys.Date()), ripley_computo)
 
 
-rownames(ripley_pcs) <- NULL
+rownames(ripley_computo) <- NULL
 
 
 ###################################################
 
 
 
-ripley_tvs2 <- ripley_tvs[,c(1,2,3,4,5,6)]
+#ripley_tvs2 <- ripley_tvs[,c(1,2,3,4,5,6)]
 
 
 ### Completar las pulgadas de 2 TVs a mano
 
 
+
+ripley <- rbind(ripley_tvs, ripley_computo)
+
+
 #####################################################################
 #####################################################################
 
@@ -227,9 +252,9 @@ ripley_tvs2 <- ripley_tvs[,c(1,2,3,4,5,6)]
 
 
 
-file <- paste( as.character(Sys.Date()),"ripley-tvs", sep = "-")
+file <- paste( as.character(Sys.Date()),"ripley", sep = "-")
 
-ripley_tvs2_csv <- paste(file, "csv", sep = ".")
+ripley_csv <- paste(file, "csv", sep = ".")
 
 
-write.csv(ripley_tvs2, ripley_tvs2_csv, row.names = F)
+write.csv(ripley, ripley_csv, row.names = F)
