@@ -4,15 +4,15 @@ library(dplyr)
 
 
 #setwd("D:\\RCoursera\\Ripley")
-#setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
-setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
+#setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
 
 
 
 #start RSelenium
 
 
-rD  <- rsDriver(port = 4534L, browser = "firefox", version = "latest", chromever = "latest",
+rD  <- rsDriver(port = 4535L, browser = "firefox", version = "latest", chromever = "latest",
                 geckover = "latest", iedrver = NULL, phantomver = "2.1.1",
                 verbose = TRUE, check = TRUE)
 

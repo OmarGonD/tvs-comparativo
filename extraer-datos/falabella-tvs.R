@@ -4,9 +4,9 @@ library(dplyr)
 
 
 
-#setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
+setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
 #setwd("D:\\RCoursera\\Falabella")
-setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+#setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
 
 
 #start RSelenium

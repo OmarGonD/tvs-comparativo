@@ -2,8 +2,8 @@ library(dplyr)
 library(tidyr)
 
 
-
-setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
+#setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
 
 falabella <- read.csv("2017-08-24-falabella.csv")
 ripley <- read.csv("2017-08-24-ripley.csv")
@@ -460,20 +460,6 @@ ecommerce$producto <- gsub('"', '', ecommerce$producto, ignore.case = T)
 ##########################################
 
 
-ecommerce$sku <- gsub("(.*)([0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$producto)
-
-ecommerce$sku <- gsub("(.*)([a-zA-Z]?{2}[0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$producto)
-
-
-#ecommerce$sku <- gsub("(.*)([0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$sku)
-
-
-ecommerce$sku <- gsub("(.*)([0-9]{2}[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1})(.*)", "\\2", ecommerce$sku)
-
-ecommerce$sku <- gsub("(.*)([a-zA-Z]{2}[0-9]{2}[a-zA-Z]{2})(.*)", "\\2", ecommerce$sku)
-
-
-ecommerce$sku <- gsub("(.*)([a-zA-Z]{2}[0-9]{3,4})(.*)", "\\2", ecommerce$sku)
 
 
 
@@ -483,7 +469,6 @@ ecommerce$sku <- gsub("(.*)([a-zA-Z]{2}[0-9]{3,4})(.*)", "\\2", ecommerce$sku)
 
 
 
-View(ecommerce[938,])
 
 ##########################################
 ##########################################
@@ -541,20 +526,58 @@ ecommerce$producto <- gsub("Ã¢Â???Â", '"',ecommerce$producto)
 ### Split columns to get SKU ### 
 
 
-a <- separate(data = ecommerce, col = producto, into = c("a", "b", "c", "d", "e", "f", "h","i", "j", "k", 
-                                                         "l", "m"), sep = "\\s", remove = FALSE)
+# a <- separate(data = ecommerce, col = producto, into = c("a", "b", "c", "d", "e", "f", "h","i", "j", "k", 
+#                                                          "l", "m"), sep = "\\s", remove = FALSE)
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# ecommerce_matches <- ecommerce %>%
+#                      distinct(producto, marca, .keep_all = TRUE)
+# 
+# 
+# 
+# 
 
 
+#############
+#############
+#############
 
 
+# ecommerce$sku <- gsub("(.*)([0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$producto)
+# 
+ecommerce$sku <- gsub("(.*)([a-zA-Z]?{2}[0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$producto)
 
 
+ecommerce$sku <- gsub("(.*)([0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$sku)
 
 
+ecommerce$sku <- gsub("(.*)([0-9]{2}[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1})(.*)", "\\2", ecommerce$sku)
 
-ecommerce_matches <- ecommerce %>%
-                     distinct(producto, marca, .keep_all = TRUE)
+ecommerce$sku <- gsub("(.*)([a-zA-Z]{2}[0-9]{2}[a-zA-Z]{2})(.*)", "\\2", ecommerce$sku)
 
 
+ecommerce$sku <- gsub("(.*)([a-zA-Z]{2}[0-9]{3,4})(.*)", "\\2", ecommerce$sku)
 
+
+ecommerce$producto <- gsub("â<U\\+0080>¦", "", ecommerce$producto)
+
+ecommerce$producto <- gsub("<U\\+0096>", "", ecommerce$producto)
+
+ecommerce$producto <- gsub("Â|â.*>", "", ecommerce$producto)
+
+ecommerce$producto <- gsub("Ã<U\\+009A>", "Ú", ecommerce$producto)
+
+ecommerce$producto <- gsub("Ã<U\\+0097>", "", ecommerce$producto)
+
+ecommerce$producto <- gsub("^- ", "", ecommerce$producto)
+
+
+dput(ecommerce, "ecommerceSS.txt")
 
