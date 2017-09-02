@@ -1,9 +1,10 @@
+library(tidyverse)
 library(dplyr)
 library(tidyr)
 
 
-setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
-#setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+#setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
+setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
 
 falabella <- read.csv("2017-08-24-falabella.csv")
 ripley <- read.csv("2017-08-24-ripley.csv")
@@ -460,11 +461,13 @@ ecommerce$producto <- gsub('"', '', ecommerce$producto, ignore.case = T)
 ##########################################
 
 
+unique(falabella$categoria)
+unique(ripley$categoria)
+unique(linio$categoria)
 
 
 
-
-
+unique(ecommerce$categoria)
 
 
 
@@ -482,6 +485,8 @@ ecommerce <- rbind(ecommerce, falabella)
 ecommerce <- ecommerce[,c(1,2,3,7,4,5,6)]
 
 
+
+unique(ecommerce$categoria)
 
 ##########################################
 ##########################################
@@ -520,6 +525,8 @@ ecommerce$producto <- gsub("Ã¢Â???Â", '"',ecommerce$producto)
 
 
 
+
+unique(ecommerce$categoria)
 
 
 
@@ -579,5 +586,154 @@ ecommerce$producto <- gsub("Ã<U\\+0097>", "", ecommerce$producto)
 ecommerce$producto <- gsub("^- ", "", ecommerce$producto)
 
 
-dput(ecommerce, "ecommerceSS.txt")
+
+
+ecommerce$categoria <- gsub("computo", "cómputo", ecommerce$categoria)
+
+#
+
+  unique(ecommerce$categoria)
+
+# 
+# ecommerce$categoria <- gsub("Macrotel", "cómputo", ecommerce$marca)
+# 
+# 
+# ecommerce$categoria <- gsub("Fiddler", "cómputo", ecommerce$marca, ignore.case = T)
+
+
+
+
+##################################
+##################################
+##################################
+
+
+
+### RANGOS 
+
+ecommerce  <- ecommerce  %>%
+  mutate(rangos = ifelse(precio.actual <= 500, "< S/.500",
+                         ifelse(precio.actual > 500 & precio.actual <= 1500,
+                                "S/.500 - S/.1500",
+                                ifelse(precio.actual > 1500 & precio.actual <= 2500,"S/.1500 - S/.2500",
+                                       ifelse(precio.actual > 2500 & precio.actual <= 3500,"S/.2500 - S/.3500",
+                                              ifelse(precio.actual > 3500 & precio.actual <= 4500,"S/.3500 - S/.4500",
+                                                     "> S/.4,500"))))))
+
+
+
+# ecommerce$rangos <- factor(ecommerce $rangos, levels = c("< S/.500",
+#                                                          "S/.500 - S/.1500",
+#                                                          "S/.1500 - S/.2500",
+#                                                          "S/.2500 - S/.3500",
+#                                                          "S/.3500 - S/.4500",
+#                                                          "> S/.4,500"),
+#                            ordered = T)
+
+
+
+
+
+
+
+
+ecommerce.cantidad <- ecommerce  %>%
+  group_by(ecommerce, marca) %>%
+  summarise(cantidad = length(marca))
+
+
+
+
+
+# ecommerce.cantidad$marca <- factor(ecommerce.cantidad$marca, levels = c("lg",
+#                                                                         "samsung",
+#                                                                         "sony",
+#                                                                         "haier",
+#                                                                         "panasonic",
+#                                                                         "sharp",
+#                                                                         "aoc"),
+#                                    ordered = T)
+# 
+# 
+
+
+ggplot(ecommerce.cantidad, aes(x=marca, y= cantidad)) + 
+  geom_bar(stat = "identity", width = .7, fill= "lightblue") +
+  labs(title = "Ripley Perú \n Cantidad de TVs por marca",
+       x = "", y = "") +
+  theme(axis.text.x = element_text(colour="grey10",size=14,hjust=.5,vjust=.5,face="plain"),
+        axis.text.y = element_text(colour="grey10",size=12,,hjust=0,vjust=0,face="plain"),  
+        axis.title.x = element_text(colour="grey40",size=6,angle=0,hjust=.5,vjust=0,face="plain"),
+        axis.title.y = element_text(colour="grey40",size=6,angle=90,hjust=.5,vjust=.5,face="plain"),
+        plot.title = element_text(vjust=2))
+
+
+
+
+####
+
+
+
+r.rangos <- ggplot(ecommerce , aes(rangos))
+r.rangos + geom_histogram(aes(fill = marca), width = .7) + labs(title = "Ripley Perú \n Marcas de TV por rangos de precios",
+                                                                x = "rango de precios", y = "cantidad de tvs")  +
+  scale_fill_brewer(palette="Set3") +
+  theme(axis.text.x = element_text(colour="grey10",size=10,hjust=.5,vjust=.5,face="plain"),
+        axis.text.y = element_text(colour="grey10",size=10,,hjust=1,vjust=0,face="plain"),  
+        axis.title.x = element_text(colour="grey40",size=6,angle=0,hjust=.5,vjust=0,face="plain"),
+        axis.title.y = element_text(colour="grey40",size=6,angle=90,hjust=.5,vjust=.5,face="plain"),
+        plot.title = element_text(vjust=2),
+        legend.title = element_text(colour="grey40", size=8, face="bold"),
+        legend.text = element_text(colour="grey10", size=12, face="bold"))
+
+
+
+
+##############
+
+
+
+
+
+
+
+
+
+
+
+## Porcentaje de TV según marca y rango de precio
+
+
+colfunc <- colorRampPalette(c("red","yellow","purple", "green","royalblue"))
+cbPalette <- colfunc(length(unique(ecommerce.porcentajes$marca)))
+
+
+
+
+ecommerce.porcentajes <- ecommerce  %>%
+  filter(ecommerce == "falabella", categoria == "televisores") %>%
+  group_by(rangos, marca) %>%
+  summarise(cantidad.marca = length(marca)) %>% 
+  mutate( porcentaje = cantidad.marca/sum(cantidad.marca))
+
+unique(ecommerce$ecommerce)
+unique(ecommerce$categoria)
+
+ggplot(ecommerce.porcentajes, aes(x=rangos, y= porcentaje ,fill=marca)) + 
+  geom_bar(stat = "identity", width = .7) +
+  #scale_fill_brewer(palette="Set3") +
+  scale_fill_manual(values=cbPalette) + 
+  labs(title = "Ripley Perú \n % marca de tvs por rango de precios",
+       x = "rango de precios", y = "% cantidad de tvs") +
+  theme(axis.text.x = element_text(colour="grey20",size=14,hjust=.5,vjust=.5,face="plain"),
+        axis.text.y = element_text(colour="grey20",size=14,,hjust=1,vjust=0,face="plain"),  
+        axis.title.x = element_text(colour="grey20",size=14,angle=0,hjust=.5,vjust=0,face="plain"),
+        axis.title.y = element_text(colour="grey20",size=14,angle=90,hjust=.5,vjust=.5,face="plain"),
+        plot.margin= unit(c(2, 1, -5.5, 1), "lines"), 
+        plot.title = element_text(vjust=2)) +
+  scale_y_continuous(labels = scales::percent)
+
+
+
+
 
