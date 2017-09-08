@@ -6,15 +6,15 @@ library(urltools)
 
 
 
-setwd("D:\\rls\\productos-comparativo\\extraer-datos")
+#setwd("D:\\rls\\productos-comparativo\\extraer-datos")
 #setwd("D:\\RCoursera\\Falabella")
-#setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
 
 
 #start RSelenium
 
 
-rD  <- rsDriver(port = 4503L, browser = "firefox", version = "latest", chromever = "latest",
+rD  <- rsDriver(port = 4504L, browser = "firefox", version = "latest", chromever = "latest",
                 geckover = "latest", iedrver = NULL, phantomver = "2.1.1",
                 verbose = TRUE, check = TRUE)
 
@@ -45,6 +45,8 @@ falabella_data_list <- list()
 for (i in falabella_urls$url) {
   
   remDr$navigate(i)
+  
+  print(i)
   
   Sys.sleep(05)
   
@@ -113,8 +115,6 @@ falabella = do.call(rbind, falabella_data_list)
 #falabella <- cbind(fecha = as.character(Sys.Date()), falabella)
 
 rownames(falabella) <- NULL
-
-
 
 
 
