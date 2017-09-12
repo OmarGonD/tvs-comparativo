@@ -1,7 +1,13 @@
-library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(urltools)
+library(stringr)
 
-setwd("D:\\RCoursera\\r-s-l\\extraer-datos\\falabella")
 
+
+#setwd("D:\\RCoursera\\r-s-l\\extraer-datos\\falabella") #PC
+
+setwd("D:\\rls\\tvs-comparativo\\extraer-datos\\falabella") #LAPTOP
 
 
 
@@ -11,6 +17,29 @@ falabella <- dir(getwd(), full.names = TRUE) %>%
 
 
 
+
+falabella$producto <- gsub(";.*", "", falabella$producto)
+
+falabella$producto <- gsub("\\?.*", "", falabella$producto)
+
+
+
+#falabella$producto <- str_split(falabella$producto, "/")
+
+
+for (i in seq_along(falabella$producto)) {
+  
+  falabella$producto[i] <- str_split(falabella$producto[i], "/")[[1]][5]
+  
+}
+
+
+
+falabella$producto <- gsub("\\-", " ", falabella$producto)
+
+
+
+str_split(falabella$producto[22], "/")[[1]][5]
 
 
 
@@ -200,7 +229,10 @@ falabella <- falabella[, c(1,3,8,2,4,5,6,7)]
 
 
 ### 
-setwd("D:\\RCoursera\\r-s-l\\base-de-datos\\falabella-bd")
+#setwd("D:\\RCoursera\\r-s-l\\base-de-datos\\falabella-bd") #PC
+setwd("D:\\rls\\tvs-comparativo\\base-de-datos\\falabella-bd") #Laptop
+
+
 
 
 file <- paste( as.character(Sys.Date()),"falabella-bd", sep = "-")
