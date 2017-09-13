@@ -1,16 +1,58 @@
-library(tidyverse)
+library(readr)
+
+
 
 setwd("D:\\RCoursera\\r-s-l\\extraer-datos\\ripley")
 
 
 
+# ripley <- dir(getwd(), full.names = TRUE) %>%
+#           map(read_csv, col_names = TRUE) %>% bind_rows()
+# 
+# 
 
 
 
 
-ripley <- dir(getwd(), full.names = TRUE) %>%
-          map(read_csv, col_names = TRUE) %>% bind_rows()
 
+ripley9 <- read.csv("D:\\RCoursera\\r-s-l\\extraer-datos\\ripley\\2017-09-09-ripley.csv")
+
+
+ripley10 <- read.csv("D:\\RCoursera\\r-s-l\\extraer-datos\\ripley\\2017-09-10-ripley.csv")
+
+
+ripley11 <- read.csv("D:\\RCoursera\\r-s-l\\extraer-datos\\ripley\\2017-09-11-ripley.csv")
+
+
+ripley12 <- read.csv("D:\\RCoursera\\r-s-l\\extraer-datos\\ripley\\2017-09-12-ripley.csv")
+
+
+
+ripley12 <- ripley12[,c(1,2,3,4,6,7,8)]
+
+
+colnames(ripley9)
+
+colnames(ripley10)
+
+colnames(ripley11)
+
+colnames(ripley12)[3] <- "categoria"
+
+colnames(ripley12)[4] <- "subcategoria"
+
+
+
+
+
+ripley <- rbind(ripley9, ripley10, ripley11,
+                ripley12)
+
+
+
+
+
+unique(ripley$categoria)
 
 
 #####
@@ -566,8 +608,16 @@ ripley$marca <- ifelse(grepl("ASHLEY", ripley$producto, ignore.case = T), "Ashle
 
 ##########################################
 
+colnames(ripley)
+
 
 ripley <- ripley[, c(1,2,3,4,8,5,6,7)]
+
+
+
+
+ripley$categoria <- gsub("\\-", " ", ripley$categoria)
+
 
 
 

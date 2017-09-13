@@ -42,7 +42,7 @@ ripley_urls <- read.csv2("ripley-urls-totales.csv")
 
 ripley_data_list <- list()
 
-#### Extracción de datos ####
+#### Extracci?n de datos ####
 
 
 
@@ -55,13 +55,13 @@ for (i in ripley_urls$url) {
   
   Sys.sleep(03)
   
-  #1 == Categoria: Cómputo
+  #1 == Categoria: C?mputo
   #2 == Subcategoria: Proyectores y monitores
   #3 == Producto: Monitores
     
   categoria_url <- (str_split(path(i), "\\/")[[1]][1])
   subcategoria_url <- (str_split(path(i), "\\/")[[1]][2])
-  producto_url <- (str_split(path(i), "\\/")[[1]][3])
+  #producto_url <- (str_split(path(i), "\\/")[[1]][3])
   
   
   
@@ -84,9 +84,9 @@ for (i in ripley_urls$url) {
     data.frame(
       fecha = as.character(Sys.Date()),
       ecommerce = "Ripley",
-      categoria_url = categoria_url,
-      subcategoria_url = subcategoria_url,
-      producto_url = producto_url,
+      categoria = categoria_url,
+      subcategoria = subcategoria_url,
+      #producto_url = producto_url,
       producto = r.producto,
       precio.antes = ifelse(length(r.precio.antes)==0, NA, r.precio.antes),
       precio.actual = ifelse(length(r.precio.actual)==0, NA, r.precio.actual), 

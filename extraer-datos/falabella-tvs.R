@@ -40,6 +40,7 @@ falabella_urls <- read.csv("falabella-urls-totales.csv", stringsAsFactors = F)
 
 falabella_data_list <- list()
 
+num_urls <- 0
 
 
 for (i in falabella_urls$url) {
@@ -48,7 +49,13 @@ for (i in falabella_urls$url) {
   
   print(i)
   
-  Sys.sleep(05)
+  num_urls = num_urls + 1
+  
+  print(num_urls)
+  
+  
+  
+  Sys.sleep(03)
   
   page_source<-remDr$getPageSource()
   
@@ -60,7 +67,8 @@ for (i in falabella_urls$url) {
     
     subcategoria_url <- str_split(path(i), "\\/")[[1]][4]
     s.marca <- html_nodes(node,"div.marca a") %>% html_text
-    s.producto <- html_nodes(node,"div.detalle a") %>% html_attr("href")
+    #s.producto <- html_nodes(node,"div.detalle a") %>% html_attr("href")
+    s.producto <- html_nodes(node,"div.detalle a") %>% html_text()
     s.precio.antes <- html_nodes(node, "div.precio2 span") %>% html_text
     s.precio.actual <- html_nodes(node, "div.precio1 span") %>% html_text 
     #s.precio.antes <- html_nodes(node, "div.precio3 span") %>% html_text 
