@@ -8,7 +8,7 @@ library(urltools)
 
 #setwd("D:\\rls\\productos-comparativo\\extraer-datos")
 #setwd("D:\\RCoursera\\Falabella")
-setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+setwd("D:\\RCoursera\\r-s-l\\extraer-datos") #PC
 
 
 #start RSelenium

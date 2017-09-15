@@ -6,8 +6,8 @@ library(stringr)
 library(urltools)
 
 #setwd("D:\\RCoursera\\Ripley")
-setwd("D:\\rls\\tvs-comparativo\\extraer-datos") #LAPTOP
-#setwd("D:\\RCoursera\\r-s-l\\extraer-datos") #PC
+#setwd("D:\\rls\\tvs-comparativo\\extraer-datos") #LAPTOP
+setwd("D:\\RCoursera\\r-s-l\\extraer-datos") #PC
 
 
 
