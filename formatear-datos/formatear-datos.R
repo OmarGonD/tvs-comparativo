@@ -3,8 +3,8 @@ library(dplyr)
 library(tidyr)
 
 
-#setwd("D:\\rls\\tvs-comparativo\\extraer-datos")
-setwd("D:\\RCoursera\\r-s-l\\extraer-datos")
+setwd("D:\\rls\\tvs-comparativo\\extraer-datos") #LAPTOP
+#setwd("D:\\RCoursera\\r-s-l\\extraer-datos") #PC
 
 falabella <- read.csv("2017-08-24-falabella.csv")
 ripley <- read.csv("2017-08-24-ripley.csv")
@@ -13,11 +13,20 @@ linio <- read.csv("2017-08-24-linio.csv")
 
 
 
-ecommerce <- rbind(ripley, linio)
+ecommerce <- rbind(ripley)
 
 #### 
 
 
+
+
+
+ecommerce$producto <- trimws(ecommerce$producto, which = "both")
+
+
+ecommerce$precio.antes <- trimws(ecommerce$precio.antes, which = "both")
+
+ecommerce$precio.actual <- trimws(ecommerce$precio.actual, which = "both")
 
 
 
@@ -442,12 +451,92 @@ ecommerce$producto <- gsub("Micronics ", "", ecommerce$producto, ignore.case = T
 
 
 
+ecommerce$marca <- ifelse(grepl("Royal", ecommerce$producto, ignore.case = T), "Royal",ecommerce$marca)
+
+ecommerce$producto <- gsub("Royal ", "", ecommerce$producto, ignore.case = T)
+
+
+
+
+ecommerce$marca <- ifelse(grepl("Oanda", ecommerce$producto, ignore.case = T), "Oanda",ecommerce$marca)
+
+ecommerce$producto <- gsub("Oanda ", "", ecommerce$producto, ignore.case = T)
+
+
+
+
+
+ecommerce$marca <- ifelse(grepl("Onloon", ecommerce$producto, ignore.case = T), "Onloon",ecommerce$marca)
+
+ecommerce$producto <- gsub("Onloon ", "", ecommerce$producto, ignore.case = T)
+
+
+
+
+
+ecommerce$marca <- ifelse(grepl("Altron", ecommerce$producto, ignore.case = T), "Altron",ecommerce$marca)
+
+ecommerce$producto <- gsub("Altron ", "", ecommerce$producto, ignore.case = T)
+
+
+
+
+
+
+ecommerce$marca <- ifelse(grepl("Apple", ecommerce$producto, ignore.case = T), "Apple",ecommerce$marca)
+
+ecommerce$producto <- gsub("Apple ", "", ecommerce$producto, ignore.case = T)
+
+
+### SKU 
+
+
+
+#ecommerce$sku<- ifelse(grepl("\\b[0-9]{2}[A-Z]{2}[0-9]{4}\\b", ecommerce$producto, ignore.case = T), "Apple",ecommerce$marca)
+
+
+ecommerce$sku <- gsub("(.*?)([a-zA-Z]{0,2}[0-9]{2}[a-zA-Z]{1,2}[0-9]{2,4})(.*)", "\\2", ecommerce$producto)
+
+
+
+ecommerce$producto <- gsub("Apple ", "", ecommerce$producto, ignore.case = T)
+
+
+###
+
+
+
+
 
 ecommerce$marca <- ifelse(grepl("[0-9]", ecommerce$marca, ignore.case = T), "Otras",ecommerce$marca)
 
 
 
 
+
+
+
+
+
+
+
+
+
+ecommerce_otras <- ecommerce %>%
+                  filter(marca == "Otras")
+
+
+ab <- ecommerce[nchar(ecommerce$sku) > 12,]
+
+
+#75Q8C
+#MT48AF
+
+ab$sku <- gsub("(.*?)([0-9]{0,2}[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1,2}[0-9]{2}[a-zA-Z]{2}|[a-zA-Z]{2}[0-9]{4})(.*)",
+               "\\2", ab$producto)
+
+
+ab$producto[140]
 ##########################################
 ##########################################
 ##########################################
@@ -491,15 +580,6 @@ unique(ecommerce$categoria)
 ##########################################
 ##########################################
 ##########################################
-
-
-
-ecommerce$producto <- trimws(ecommerce$producto, which = "both")
-
-
-ecommerce$precio.antes <- trimws(ecommerce$precio.antes, which = "both")
-
-ecommerce$precio.actual <- trimws(ecommerce$precio.actual, which = "both")
 
 
 
